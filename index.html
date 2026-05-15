@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your 3-Month Transformation Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --dark: #111111;
+    --card: #181818;
+    --border: #2a2a2a;
+    --accent: #e8ff47;
+    --accent2: #ff6b35;
+    --accent3: #47c9ff;
+    --text: #f0f0f0;
+    --muted: #888;
+    --green: #4ade80;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  @media print {
+    body { background: white; color: #111; font-size: 11px; }
+    .no-print { display: none; }
+    .page-break { page-break-before: always; }
+    section { page-break-inside: avoid; }
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--dark);
+    border-bottom: 1px solid var(--border);
+    padding: 48px 32px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(232,255,71,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 8vw, 88px);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+  .hero h1 span { color: var(--accent); }
+  .hero-stats {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+  .stat {
+    display: flex;
+    flex-direction: column;
+  }
+  .stat-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 2px;
+  }
+
+  /* LAYOUT */
+  .container { max-width: 960px; margin: 0 auto; padding: 32px 24px; }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-title .icon { font-size: 24px; }
+  .section-title .line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+    margin-left: 8px;
+  }
+
+  /* CARDS */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  .card-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 12px;
+  }
+
+  /* MEAL PLAN */
+  .meal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .meal-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .meal-header {
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .meal-time {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .meal-name {
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .meal-macros {
+    display: flex;
+    gap: 12px;
+  }
+  .macro {
+    text-align: center;
+  }
+  .macro-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    line-height: 1;
+  }
+  .macro-val.cal { color: var(--accent2); }
+  .macro-val.pro { color: var(--accent); }
+  .macro-label {
+    font-size: 9px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .meal-body { padding: 12px 16px; }
+  .meal-items { list-style: none; }
+  .meal-items li {
+    font-size: 13px;
+    color: var(--text);
+    padding: 3px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .meal-items li::before {
+    content: '·';
+    color: var(--accent);
+    font-size: 18px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .meal-items li:last-child { border-bottom: none; }
+
+  /* TOTALS BAR */
+  .totals-bar {
+    background: var(--accent);
+    color: var(--black);
+    border-radius: 12px;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .totals-bar .t-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+  }
+  .totals-bar .t-vals {
+    display: flex;
+    gap: 24px;
+  }
+  .totals-bar .t-item {
+    text-align: center;
+  }
+  .totals-bar .t-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    line-height: 1;
+  }
+  .totals-bar .t-sub {
+    font-size: 10px;
+    font-family: 'DM Mono', monospace;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  /* WATER SCHEDULE */
+  .water-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .water-row:last-child { border-bottom: none; }
+  .water-time {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    width: 130px;
+    flex-shrink: 0;
+  }
+  .water-bar-wrap {
+    flex: 1;
+    height: 6px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .water-bar {
+    height: 100%;
+    background: var(--accent3);
+    border-radius: 4px;
+    transition: width 0.3s;
+  }
+  .water-amt {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: var(--accent3);
+    width: 60px;
+    text-align: right;
+  }
+
+  /* CALENDAR */
+  .cal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .cal-month {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+  .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+  }
+  .cal-day-label {
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    padding: 4px 0 8px;
+  }
+  .cal-day {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 6px;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .cal-day.empty {
+    background: transparent;
+    border-color: transparent;
+  }
+  .cal-day.push { border-color: #ff6b3540; background: #ff6b3508; }
+  .cal-day.pull { border-color: #47c9ff40; background: #47c9ff08; }
+  .cal-day.legs { border-color: #a78bfa40; background: #a78bfa08; }
+  .cal-day.hiit { border-color: #e8ff4740; background: #e8ff4708; }
+  .cal-day.upper { border-color: #4ade8040; background: #4ade8008; }
+  .cal-day.active { border-color: #f9a84d40; background: #f9a84d08; }
+  .cal-day.rest { border-color: var(--border); background: #ffffff04; }
+  .day-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    line-height: 1;
+    color: var(--muted);
+  }
+  .day-focus {
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    line-height: 1.3;
+  }
+  .push .day-focus { color: var(--accent2); }
+  .pull .day-focus { color: var(--accent3); }
+  .legs .day-focus { color: #a78bfa; }
+  .hiit .day-focus { color: var(--accent); }
+  .upper .day-focus { color: var(--green); }
+  .active .day-focus { color: #f9a84d; }
+  .rest .day-focus { color: var(--muted); }
+  .day-core {
+    font-size: 8px;
+    color: var(--muted);
+    margin-top: auto;
+    font-family: 'DM Mono', monospace;
+  }
+  .push .day-core, .pull .day-core, .legs .day-core, .hiit .day-core, .upper .day-core { color: var(--accent); }
+
+  /* CORE ROUTINE */
+  .exercise-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .exercise-row:last-child { border-bottom: none; }
+  .exercise-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    color: var(--border);
+    width: 32px;
+    flex-shrink: 0;
+  }
+  .exercise-info { flex: 1; }
+  .exercise-name {
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .exercise-tip {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .exercise-sets {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  /* RULES */
+  .rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .rule-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .rule-icon { font-size: 20px; flex-shrink: 0; }
+  .rule-title { font-weight: 600; font-size: 13px; margin-bottom: 4px; }
+  .rule-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+  /* PHASE TIMELINE */
+  .phases {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .phase {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .phase::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .phase-1::before { background: var(--accent3); }
+  .phase-2::before { background: var(--accent); }
+  .phase-3::before { background: var(--accent2); }
+  .phase-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    line-height: 1;
+    color: var(--border);
+    margin-bottom: 4px;
+  }
+  .phase-month {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+  .phase-1 .phase-month { color: var(--accent3); }
+  .phase-2 .phase-month { color: var(--accent); }
+  .phase-3 .phase-month { color: var(--accent2); }
+  .phase-focus { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
+  .phase-target {
+    background: rgba(255,255,255,0.05);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+  }
+  .phase-target span { color: var(--green); font-weight: 600; }
+
+  /* LEGEND */
+  .legend {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .legend-dot {
+    width: 10px; height: 10px;
+    border-radius: 2px;
+  }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    padding: 32px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* PRINT BUTTON */
+  .print-btn {
+    position: fixed;
+    bottom: 24px; right: 24px;
+    background: var(--accent);
+    color: var(--black);
+    border: none;
+    border-radius: 50px;
+    padding: 12px 24px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    box-shadow: 0 4px 24px rgba(232,255,71,0.3);
+    z-index: 100;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .print-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(232,255,71,0.4);
+  }
+
+  section { margin-bottom: 48px; }
+
+  @media (max-width: 600px) {
+    .phases { grid-template-columns: 1fr; }
+    .meal-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 52px; }
+    .cal-day { min-height: 60px; }
+    .day-focus { font-size: 7px; }
+  }
+</style>
+</head>
+<body>
+
+<button class="print-btn no-print" onclick="window.print()">🖨 Print / Save PDF</button>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">🎯 Transformation Plan · June 1 – September 1, 2025</div>
+  <h1>LOSE <span>6KG</span><br>BUILD <span>ABS</span></h1>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-val">80kg</div><div class="stat-label">Current Weight</div></div>
+    <div class="stat"><div class="stat-val">1,830</div><div class="stat-label">Daily Calories</div></div>
+    <div class="stat"><div class="stat-val">132g</div><div class="stat-label">Daily Protein</div></div>
+    <div class="stat"><div class="stat-val">3.8L</div><div class="stat-label">Daily Water</div></div>
+    <div class="stat"><div class="stat-val">90</div><div class="stat-label">Days</div></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- PHASE TIMELINE -->
+  <section>
+    <div class="section-title"><span class="icon">🗺️</span> 3-Month Roadmap <div class="line"></div></div>
+    <div class="phases">
+      <div class="phase phase-1">
+        <div class="phase-num">01</div>
+        <div class="phase-month">JUNE — Foundation</div>
+        <div class="phase-focus">Build the habit. Lock in form. Enter consistent calorie deficit.</div>
+        <div class="phase-target">Target: <span>−2.5 kg</span></div>
+      </div>
+      <div class="phase phase-2">
+        <div class="phase-num">02</div>
+        <div class="phase-month">JULY — Intensity</div>
+        <div class="phase-focus">Progressive overload. HIIT 2×/week. Core strength increasing.</div>
+        <div class="phase-target">Target: <span>−2 kg</span></div>
+      </div>
+      <div class="phase phase-3">
+        <div class="phase-num">03</div>
+        <div class="phase-month">AUG — Shred</div>
+        <div class="phase-focus">Carb cycling. HIIT 3×/week. Abs start becoming visible.</div>
+        <div class="phase-target">Target: <span>−1.5 kg + visible abs</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEAL PLAN -->
+  <section>
+    <div class="section-title"><span class="icon">🍽️</span> Daily Meal Plan <div class="line"></div></div>
+
+    <div class="meal-grid">
+      <!-- Pre-workout -->
+      <div class="meal-card">
+        <div class="meal-header">
+          <div>
+            <div class="meal-time">6:00 AM · Pre-Workout</div>
+            <div class="meal-name">Fuel Up</div>
+          </div>
+          <div class="meal-macros">
+            <div class="macro"><div class="macro-val cal">90</div><div class="macro-label">kcal</div></div>
+            <div class="macro"><div class="macro-val pro">1g</div><div class="macro-label">protein</div></div>
+          </div>
+        </div>
+        <div class="meal-body">
+          <ul class="meal-items">
+            <li>1 banana (medium)</li>
+            <li>Black coffee — no sugar, no milk</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Breakfast -->
+      <div class="meal-card">
+        <div class="meal-header">
+          <div>
+            <div class="meal-time">8:00–8:30 AM · Post-Workout</div>
+            <div class="meal-name">Power Breakfast</div>
+          </div>
+          <div class="meal-macros">
+            <div class="macro"><div class="macro-val cal">460</div><div class="macro-label">kcal</div></div>
+            <div class="macro"><div class="macro-val pro">35g</div><div class="macro-label">protein</div></div>
+          </div>
+        </div>
+        <div class="meal-body">
+          <ul class="meal-items">
+            <li>3 whole eggs (scrambled or boiled)</li>
+            <li>2 slices whole wheat toast</li>
+            <li>1 cup low-fat Greek yogurt (unsweetened)</li>
+            <li>½ tsp ghee or olive oil for cooking</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Mid-morning -->
+      <div class="meal-card">
+        <div class="meal-header">
+          <div>
+            <div class="meal-time">11:00 AM · Mid-Morning</div>
+            <div class="meal-name">Protein Snack</div>
+          </div>
+          <div class="meal-macros">
+            <div class="macro"><div class="macro-val cal">225</div><div class="macro-label">kcal</div></div>
+            <div class="macro"><div class="macro-val pro">28g</div><div class="macro-label">protein</div></div>
+          </div>
+        </div>
+        <div class="meal-body">
+          <ul class="meal-items">
+            <li>1 scoop whey protein in water <em>OR</em> 100g paneer cubes</li>
+            <li>10–12 almonds</li>
+            <li>1 glass of water (300ml)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Lunch -->
+      <div class="meal-card">
+        <div class="meal-header">
+          <div>
+            <div class="meal-time">1:00–1:30 PM · Lunch</div>
+            <div class="meal-name">Biggest Meal 🔥</div>
+          </div>
+          <div class="meal-macros">
+            <div class="macro"><div class="macro-val cal">490</div><div class="macro-label">kcal</div></div>
+            <div class="macro"><div class="macro-val pro">26g</div><div class="macro-label">protein</div></div>
+          </div>
+        </div>
+        <div class="meal-body">
+          <ul class="meal-items">
+            <li>1 cup cooked dal (moong / chana / masoor)</li>
+            <li>¾ cup brown rice <em>OR</em> 1 whole wheat roti</li>
+            <li>1 cup sabzi (any veg, min oil)</li>
+            <li>Big salad: cucumber, tomato, onion + lemon</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Evening snack -->
+      <div class="meal-card">
+        <div class="meal-header">
+          <div>
+            <div class="meal-time">4:30–5:00 PM · Evening</div>
+            <div class="meal-name">Afternoon Boost</div>
+          </div>
+          <div class="meal-macros">
+            <div class="macro"><div class="macro-val cal">180</div><div class="macro-label">kcal</div></div>
+            <div class="macro"><div class="macro-val pro">14g</div><div class="macro-label">protein</div></div>
+          </div>
+        </div>
+        <div class="meal-body">
+          <ul class="meal-items">
+            <li>2 boiled eggs</li>
+            <li>1 apple <em>OR</em> cucumber sticks with hummus</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Dinner -->
+      <div class="meal-card">
+        <div class="meal-header">
+          <div>
+            <div class="meal-time">7:30–8:00 PM · Dinner</div>
+            <div class="meal-name">Light &amp; Protein-Rich</div>
+          </div>
+          <div class="meal-macros">
+            <div class="macro"><div class="macro-val cal">380</div><div class="macro-label">kcal</div></div>
+            <div class="macro"><div class="macro-val pro">32g</div><div class="macro-label">protein</div></div>
+          </div>
+        </div>
+        <div class="meal-body">
+          <ul class="meal-items">
+            <li>2-egg omelette with spinach / mushroom / onion</li>
+            <li>1 bowl vegetable soup <em>OR</em> green salad</li>
+            <li>100g paneer <em>OR</em> 1 cup curd (low-fat)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Totals -->
+    <div class="totals-bar">
+      <div class="t-label">Daily Totals</div>
+      <div class="t-vals">
+        <div class="t-item"><div class="t-num">1,835</div><div class="t-sub">Calories</div></div>
+        <div class="t-item"><div class="t-num">132g</div><div class="t-sub">Protein</div></div>
+        <div class="t-item"><div class="t-num">~160g</div><div class="t-sub">Carbs</div></div>
+        <div class="t-item"><div class="t-num">~50g</div><div class="t-sub">Fats</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WATER SCHEDULE -->
+  <section>
+    <div class="section-title"><span class="icon">💧</span> Daily Water Schedule <div class="line"></div></div>
+    <div style="background: rgba(71,201,255,0.08); border: 1px solid rgba(71,201,255,0.25); border-radius:10px; padding: 12px 16px; font-size:12px; margin-bottom: 14px;">
+      💊 <strong style="color:#47c9ff;">Creatine Note:</strong> Take 5g creatine mixed in your post-workout water (500ml). Creatine pulls water into muscles — this is why your intake goes up to <strong>3.8L+</strong>. You may notice slight weight gain (0.5–1kg) in week 1 — this is water in muscles, not fat. Don't panic.
+    </div>
+    <div class="card">
+      <div class="water-row">
+        <div class="water-time">Wake up (6 AM)</div>
+        <div class="water-bar-wrap"><div class="water-bar" style="width:71%"></div></div>
+        <div class="water-amt">500ml</div>
+      </div>
+      <div class="water-row">
+        <div class="water-time">Before breakfast</div>
+        <div class="water-bar-wrap"><div class="water-bar" style="width:35%"></div></div>
+        <div class="water-amt">250ml</div>
+      </div>
+      <div class="water-row">
+        <div class="water-time">Mid-morning</div>
+        <div class="water-bar-wrap"><div class="water-bar" style="width:71%"></div></div>
+        <div class="water-amt">500ml</div>
+      </div>
+      <div class="water-row">
+        <div class="water-time">Before lunch</div>
+        <div class="water-bar-wrap"><div class="water-bar" style="width:35%"></div></div>
+        <div class="water-amt">250ml</div>
+      </div>
+      <div class="water-row">
+        <div class="water-time">Afternoon</div>
+        <div class="water-bar-wrap"><div class="water-bar" style="width:71%"></div></div>
+        <div class="water-amt">500ml</div>
+      </div>
+      <div class="water-row">
+        <div class="water-time">Pre-workout</div>
+        <div class="water-bar-wrap"><div class="water-bar" style="width:50%"></div></div>
+        <div class="water-amt">350ml</div>
+      </div>
+      <div class="water-row">
+        <div class="water-time">Post-workout 💊 +5g Creatine</div>
+        <div class="water-bar-wrap"><div class="water-bar" style="width:85%"></div></div>
+        <div class="water-amt" style="color:#47c9ff;">600ml</div>
+      </div>
+      <div class="water-row">
+        <div class="water-time">Evening / dinner</div>
+        <div class="water-bar-wrap"><div class="water-bar" style="width:57%"></div></div>
+        <div class="water-amt">400ml</div>
+      </div>
+      <div class="water-row">
+        <div class="water-time">Before bed</div>
+        <div class="water-bar-wrap"><div class="water-bar" style="width:35%"></div></div>
+        <div class="water-amt">250ml</div>
+      </div>
+    </div>
+    <div style="font-size:12px; color:var(--muted); margin-top:-8px; padding: 0 4px;">
+      💡 Add a pinch of Himalayan salt to your morning 500ml — helps electrolytes. Total: <strong style="color:#47c9ff;">~3.6L on rest days · ~3.8–4L on workout days</strong>
+    </div>
+  </section>
+
+  <!-- JUNE CALENDAR -->
+  <section class="page-break">
+    <div class="section-title"><span class="icon">📅</span> June 2025 — Workout Calendar <div class="line"></div></div>
+
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#ff6b35;"></div> Push (Chest/Shoulders/Triceps)</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#47c9ff;"></div> Pull (Back/Biceps)</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#a78bfa;"></div> Legs + Glutes</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#e8ff47;"></div> HIIT Cardio</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#4ade80;"></div> Full Upper Body</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#f9a84d;"></div> Active Recovery</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#2a2a2a;"></div> Rest</div>
+    </div>
+
+    <div class="cal-grid">
+      <!-- Day labels -->
+      <div class="cal-day-label">SUN</div>
+      <div class="cal-day-label">MON</div>
+      <div class="cal-day-label">TUE</div>
+      <div class="cal-day-label">WED</div>
+      <div class="cal-day-label">THU</div>
+      <div class="cal-day-label">FRI</div>
+      <div class="cal-day-label">SAT</div>
+
+      <!-- Week 1: June starts Sunday -->
+      <div class="cal-day rest"><div class="day-num">1</div><div class="day-focus">Rest</div></div>
+      <div class="cal-day push"><div class="day-num">2</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
+      <div class="cal-day pull"><div class="day-num">3</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
+      <div class="cal-day legs"><div class="day-num">4</div><div class="day-focus">Legs</div><div class="day-core">+ Core</div></div>
+      <div class="cal-day hiit"><div class="day-num">5</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
+      <div class="cal-day upper"><div class="day-num">6</div><div class="day-focus">Full Upper</div><div class="day-core">+ Core</div></div>
+      <div class="cal-day active"><div class="day-num">7</div><div class="day-focus">Walk / Yoga</div></div>
+
+      <!-- Week 2 -->
+      <div class="cal-day rest"><div class="day-num">8</div><div class="day-focus">Rest</div></div>
+      <div class="cal-day push"><div class="day-num">9</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
+      <div class="cal-day pull"><div class="day-num">10</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
+      <div class="cal-day legs"><div class="day-num">11</div><div class="day-focus">Legs</div><div class="day-core">+ Core</div></div>
+      <div class="cal-day hiit"><div class="day-num">12</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
+      <div class="cal-day upper"><div class="day-num">13</div><div class="day-focus">Full Upper</div><div class="day-core">+ Core</div></div>
+      <div class="cal-day active"><div class="day-num">14</div><div class="day-focus">Walk / Yoga</div></div>
+
+      <!-- Week 3 -->
+      <div class="cal-day rest"><div class="day-num">15</div><div class="day-focus">Rest</div></div>
+      <div class="cal-day push"><div class="day-num">16</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
+      <div class="cal-day pull"><div class="day-num">17</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
+      <div class="cal-day legs"><div class="day-num">18</div><div class="day-focus">Legs</div><div class="day-core">+ Core</div></div>
+      <div class="cal-day hiit"><div class="day-num">19</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
+      <div class="cal-day upper"><div class="day-num">20</div><div class="day-focus">Full Upper</div><div class="day-core">+ Core</div></div>
+      <div class="cal-day active"><div class="day-num">21</div><div class="day-focus">Walk / Yoga</div></div>
+
+      <!-- Week 4 -->
+      <div class="cal-day rest"><div class="day-num">22</div><div class="day-focus">Rest</div></div>
+      <div class="cal-day push"><div class="day-num">23</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
+      <div class="cal-day pull"><div class="day-num">24</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
+      <div class="cal-day legs"><div class="day-num">25</div><div class="day-focus">Legs</div><div class="day-core">+ Core</div></div>
+      <div class="cal-day hiit"><div class="day-num">26</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
+      <div class="cal-day upper"><div class="day-num">27</div><div class="day-focus">Full Upper</div><div class="day-core">+ Core</div></div>
+      <div class="cal-day active"><div class="day-num">28</div><div class="day-focus">Walk / Yoga</div></div>
+
+      <!-- Week 5 -->
+      <div class="cal-day rest"><div class="day-num">29</div><div class="day-focus">Rest</div></div>
+      <div class="cal-day push"><div class="day-num">30</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
+      <div class="cal-day empty"></div>
+      <div class="cal-day empty"></div>
+      <div class="cal-day empty"></div>
+      <div class="cal-day empty"></div>
+      <div class="cal-day empty"></div>
+    </div>
+  </section>
+
+  <!-- DAILY CORE ROUTINE -->
+  <section>
+    <div class="section-title"><span class="icon">🔥</span> Daily Core Routine (15–18 min) <div class="line"></div></div>
+    <div class="card">
+      <div class="card-title">Do this at the END of every workout session</div>
+      <div class="exercise-row">
+        <div class="exercise-num">01</div>
+        <div class="exercise-info">
+          <div class="exercise-name">Dead Bug</div>
+          <div class="exercise-tip">Arms up, lower opposite arm + leg slowly. Protects lower back.</div>
+        </div>
+        <div class="exercise-sets">3 × 12 reps<br><span style="color:var(--muted); font-size:10px;">30s rest</span></div>
+      </div>
+      <div class="exercise-row">
+        <div class="exercise-num">02</div>
+        <div class="exercise-info">
+          <div class="exercise-name">Plank (Hold)</div>
+          <div class="exercise-tip">Elbows under shoulders. Don't let hips sag or rise.</div>
+        </div>
+        <div class="exercise-sets">3 × 45 sec<br><span style="color:var(--muted); font-size:10px;">30s rest</span></div>
+      </div>
+      <div class="exercise-row">
+        <div class="exercise-num">03</div>
+        <div class="exercise-info">
+          <div class="exercise-name">Bicycle Crunches</div>
+          <div class="exercise-tip">Slow and controlled. Don't yank your neck.</div>
+        </div>
+        <div class="exercise-sets">3 × 20 reps<br><span style="color:var(--muted); font-size:10px;">30s rest</span></div>
+      </div>
+      <div class="exercise-row">
+        <div class="exercise-num">04</div>
+        <div class="exercise-info">
+          <div class="exercise-name">Hanging / Lying Leg Raises</div>
+          <div class="exercise-tip">Lower slowly (3 sec). Lower abs + hip flexors.</div>
+        </div>
+        <div class="exercise-sets">3 × 15 reps<br><span style="color:var(--muted); font-size:10px;">30s rest</span></div>
+      </div>
+      <div class="exercise-row">
+        <div class="exercise-num">05</div>
+        <div class="exercise-info">
+          <div class="exercise-name">Mountain Climbers</div>
+          <div class="exercise-tip">Fast pace. Great for cardio + core combo.</div>
+        </div>
+        <div class="exercise-sets">3 × 30 sec<br><span style="color:var(--muted); font-size:10px;">30s rest</span></div>
+      </div>
+    </div>
+    <div style="background: rgba(232,255,71,0.06); border: 1px solid rgba(232,255,71,0.2); border-radius:10px; padding: 14px 18px; font-size:13px; color: var(--text); margin-top: 8px;">
+      ⚡ <strong>The truth about abs:</strong> Your core routine builds the muscle. Your calorie deficit reveals it. Both are essential — one without the other won't get you there.
+    </div>
+  </section>
+
+  <!-- DESK JOB RULES -->
+  <section>
+    <div class="section-title"><span class="icon">⚠️</span> Non-Negotiable Rules for a Desk Job Body <div class="line"></div></div>
+    <div class="rules-grid">
+      <div class="rule-card">
+        <div class="rule-icon">⏱️</div>
+        <div>
+          <div class="rule-title">Stand Every 45–60 Min</div>
+          <div class="rule-desc">Set a timer. Even 2-minute walks reduce cortisol — the belly fat hormone. Non-negotiable.</div>
+        </div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-icon">🚫</div>
+        <div>
+          <div class="rule-title">Zero Refined Sugar & Maida</div>
+          <div class="rule-desc">These spike insulin and promote visceral fat storage. Biscuits, white bread, packaged snacks — all out.</div>
+        </div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-icon">🌙</div>
+        <div>
+          <div class="rule-title">Dinner Before 8 PM</div>
+          <div class="rule-desc">Late eating directly impacts belly fat at 37. Your metabolism slows after 8 PM. Eat light, eat early.</div>
+        </div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-icon">😴</div>
+        <div>
+          <div class="rule-title">7–8 Hours Sleep</div>
+          <div class="rule-desc">Poor sleep = elevated cortisol = more belly fat stored. Sleep is literally part of your fat-loss plan.</div>
+        </div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-icon">🥚</div>
+        <div>
+          <div class="rule-title">Hit 140g+ Protein Daily</div>
+          <div class="rule-desc">At 37, muscle preservation requires consistent protein. Skip it and your body burns muscle, not fat.</div>
+        </div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-icon">📊</div>
+        <div>
+          <div class="rule-title">Weigh Every Monday Morning</div>
+          <div class="rule-desc">Fasted, same time, same day. Also track waist measurement at navel — it's more revealing than scale weight.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="footer">
+  Yuvraj's 90-Day Transformation Plan · June 1 – September 1, 2025 · Built with precision 💪
+</div>
+
+</body>
+</html>
