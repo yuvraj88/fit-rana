@@ -6,6 +6,7 @@
 <title>Your 3-Month Transformation Plan</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+  /* ── DARK THEME (default) ── */
   :root {
     --black: #0a0a0a;
     --dark: #111111;
@@ -17,6 +18,24 @@
     --text: #f0f0f0;
     --muted: #888;
     --green: #4ade80;
+    --hero-overlay: rgba(0,0,0,0.62);
+    --section-bg-overlay: rgba(10,10,10,0.82);
+  }
+
+  /* ── LIGHT THEME ── */
+  body.light {
+    --black: #f4f4f0;
+    --dark: #e8e8e2;
+    --card: #ffffff;
+    --border: #d4d4cc;
+    --accent: #b5c400;
+    --accent2: #d44e18;
+    --accent3: #0a9cc8;
+    --text: #1a1a1a;
+    --muted: #666;
+    --green: #16a34a;
+    --hero-overlay: rgba(255,255,255,0.55);
+    --section-bg-overlay: rgba(244,244,240,0.88);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,6 +46,7 @@
     font-family: 'DM Sans', sans-serif;
     font-size: 14px;
     line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
   }
 
   @media print {
@@ -36,22 +56,23 @@
     section { page-break-inside: avoid; }
   }
 
-  /* HERO */
+  /* ── HERO WITH BACKGROUND IMAGE ── */
   .hero {
-    background: var(--dark);
+    background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1400&q=80');
+    background-size: cover;
+    background-position: center 30%;
     border-bottom: 1px solid var(--border);
-    padding: 48px 32px 40px;
+    padding: 80px 32px 60px;
     position: relative;
     overflow: hidden;
   }
-  .hero::before {
-    content: '';
+  .hero-overlay {
     position: absolute;
-    top: -60px; right: -60px;
-    width: 300px; height: 300px;
-    background: radial-gradient(circle, rgba(232,255,71,0.08) 0%, transparent 70%);
-    pointer-events: none;
+    inset: 0;
+    background: var(--hero-overlay);
+    backdrop-filter: blur(1px);
   }
+  .hero-content { position: relative; z-index: 2; }
   .hero-tag {
     font-family: 'DM Mono', monospace;
     font-size: 11px;
@@ -59,41 +80,132 @@
     letter-spacing: 0.2em;
     text-transform: uppercase;
     margin-bottom: 12px;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.5);
   }
   .hero h1 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(48px, 8vw, 88px);
-    line-height: 0.95;
+    font-size: clamp(56px, 10vw, 100px);
+    line-height: 0.92;
     letter-spacing: 0.02em;
-    color: var(--text);
+    color: #fff;
     margin-bottom: 16px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.6);
   }
+  body.light .hero h1 { color: #fff; }
   .hero h1 span { color: var(--accent); }
   .hero-stats {
     display: flex;
     gap: 32px;
     flex-wrap: wrap;
-    margin-top: 24px;
+    margin-top: 28px;
   }
-  .stat {
-    display: flex;
-    flex-direction: column;
-  }
+  .stat { display: flex; flex-direction: column; }
   .stat-val {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 28px;
+    font-size: 30px;
     color: var(--accent);
     line-height: 1;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.4);
   }
   .stat-label {
     font-size: 11px;
-    color: var(--muted);
+    color: rgba(255,255,255,0.7);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-top: 2px;
   }
 
-  /* LAYOUT */
+  /* ── WORKOUT SECTION BANNERS ── */
+  .workout-banner {
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 24px;
+    min-height: 140px;
+    display: flex;
+    align-items: flex-end;
+  }
+  .workout-banner img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+  }
+  .workout-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.25) 100%);
+  }
+  .workout-banner-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px 24px;
+    width: 100%;
+  }
+  .workout-banner-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: #fff;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .workout-banner-sub {
+    font-size: 12px;
+    color: rgba(255,255,255,0.75);
+    font-family: 'DM Mono', monospace;
+  }
+  .workout-banner-badge {
+    position: absolute;
+    top: 14px; right: 14px;
+    background: var(--accent);
+    color: #000;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    z-index: 3;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── EXERCISE IMAGE CARDS ── */
+  .exercise-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .exercise-row:last-child { border-bottom: none; }
+  .exercise-img {
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+  }
+  .exercise-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    color: var(--border);
+    width: 28px;
+    flex-shrink: 0;
+  }
+  .exercise-info { flex: 1; }
+  .exercise-name { font-weight: 600; font-size: 14px; }
+  .exercise-tip { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .exercise-sets {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  /* ── LAYOUT ── */
   .container { max-width: 960px; margin: 0 auto; padding: 32px 24px; }
   .section-title {
     font-family: 'Bebas Neue', sans-serif;
@@ -103,16 +215,12 @@
     display: flex;
     align-items: center;
     gap: 12px;
+    color: var(--text);
   }
   .section-title .icon { font-size: 24px; }
-  .section-title .line {
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-    margin-left: 8px;
-  }
+  .section-title .line { flex: 1; height: 1px; background: var(--border); margin-left: 8px; }
 
-  /* CARDS */
+  /* ── CARDS ── */
   .card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -129,7 +237,7 @@
     margin-bottom: 12px;
   }
 
-  /* MEAL PLAN */
+  /* ── MEAL PLAN ── */
   .meal-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -142,6 +250,11 @@
     border-radius: 12px;
     overflow: hidden;
   }
+  .meal-img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+  }
   .meal-header {
     padding: 12px 16px;
     display: flex;
@@ -149,59 +262,32 @@
     align-items: center;
     border-bottom: 1px solid var(--border);
   }
-  .meal-time {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-  }
-  .meal-name {
-    font-weight: 600;
-    font-size: 13px;
-  }
-  .meal-macros {
-    display: flex;
-    gap: 12px;
-  }
-  .macro {
-    text-align: center;
-  }
-  .macro-val {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 18px;
-    line-height: 1;
-  }
+  .meal-time { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); }
+  .meal-name { font-weight: 600; font-size: 13px; }
+  .meal-macros { display: flex; gap: 12px; }
+  .macro { text-align: center; }
+  .macro-val { font-family: 'Bebas Neue', sans-serif; font-size: 18px; line-height: 1; }
   .macro-val.cal { color: var(--accent2); }
   .macro-val.pro { color: var(--accent); }
-  .macro-label {
-    font-size: 9px;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
+  .macro-label { font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
   .meal-body { padding: 12px 16px; }
   .meal-items { list-style: none; }
   .meal-items li {
     font-size: 13px;
     color: var(--text);
     padding: 3px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(128,128,128,0.1);
     display: flex;
     align-items: center;
     gap: 8px;
   }
-  .meal-items li::before {
-    content: '·';
-    color: var(--accent);
-    font-size: 18px;
-    line-height: 1;
-    flex-shrink: 0;
-  }
+  .meal-items li::before { content: '·'; color: var(--accent); font-size: 18px; line-height: 1; flex-shrink: 0; }
   .meal-items li:last-child { border-bottom: none; }
 
-  /* TOTALS BAR */
+  /* ── TOTALS BAR ── */
   .totals-bar {
     background: var(--accent);
-    color: var(--black);
+    color: #000;
     border-radius: 12px;
     padding: 16px 24px;
     display: flex;
@@ -211,84 +297,22 @@
     gap: 12px;
     margin-bottom: 32px;
   }
-  .totals-bar .t-label {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 20px;
-  }
-  .totals-bar .t-vals {
-    display: flex;
-    gap: 24px;
-  }
-  .totals-bar .t-item {
-    text-align: center;
-  }
-  .totals-bar .t-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 28px;
-    line-height: 1;
-  }
-  .totals-bar .t-sub {
-    font-size: 10px;
-    font-family: 'DM Mono', monospace;
-    text-transform: uppercase;
-    opacity: 0.7;
-  }
+  .totals-bar .t-label { font-family: 'Bebas Neue', sans-serif; font-size: 20px; }
+  .totals-bar .t-vals { display: flex; gap: 24px; }
+  .totals-bar .t-item { text-align: center; }
+  .totals-bar .t-num { font-family: 'Bebas Neue', sans-serif; font-size: 28px; line-height: 1; }
+  .totals-bar .t-sub { font-size: 10px; font-family: 'DM Mono', monospace; text-transform: uppercase; opacity: 0.7; }
 
-  /* WATER SCHEDULE */
-  .water-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--border);
-  }
+  /* ── WATER ── */
+  .water-row { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
   .water-row:last-child { border-bottom: none; }
-  .water-time {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-    width: 130px;
-    flex-shrink: 0;
-  }
-  .water-bar-wrap {
-    flex: 1;
-    height: 6px;
-    background: var(--border);
-    border-radius: 4px;
-    overflow: hidden;
-  }
-  .water-bar {
-    height: 100%;
-    background: var(--accent3);
-    border-radius: 4px;
-    transition: width 0.3s;
-  }
-  .water-amt {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 18px;
-    color: var(--accent3);
-    width: 60px;
-    text-align: right;
-  }
+  .water-time { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); width: 175px; flex-shrink: 0; }
+  .water-bar-wrap { flex: 1; height: 6px; background: var(--border); border-radius: 4px; overflow: hidden; }
+  .water-bar { height: 100%; background: var(--accent3); border-radius: 4px; }
+  .water-amt { font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: var(--accent3); width: 60px; text-align: right; }
 
-  /* CALENDAR */
-  .cal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  .cal-month {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 36px;
-    color: var(--accent);
-    letter-spacing: 0.05em;
-  }
-  .cal-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 6px;
-  }
+  /* ── CALENDAR ── */
+  .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
   .cal-day-label {
     text-align: center;
     font-family: 'DM Mono', monospace;
@@ -300,36 +324,35 @@
   .cal-day {
     border: 1px solid var(--border);
     border-radius: 8px;
-    padding: 8px 6px;
-    min-height: 80px;
+    padding: 6px 5px;
+    min-height: 86px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 3px;
+    overflow: hidden;
+    position: relative;
   }
-  .cal-day.empty {
-    background: transparent;
-    border-color: transparent;
+  .cal-day.empty { background: transparent; border-color: transparent; }
+  .cal-day-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.18;
+    border-radius: 7px;
   }
-  .cal-day.push { border-color: #ff6b3540; background: #ff6b3508; }
-  .cal-day.pull { border-color: #47c9ff40; background: #47c9ff08; }
-  .cal-day.legs { border-color: #a78bfa40; background: #a78bfa08; }
-  .cal-day.hiit { border-color: #e8ff4740; background: #e8ff4708; }
-  .cal-day.upper { border-color: #4ade8040; background: #4ade8008; }
-  .cal-day.active { border-color: #f9a84d40; background: #f9a84d08; }
-  .cal-day.rest { border-color: var(--border); background: #ffffff04; }
-  .day-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 20px;
-    line-height: 1;
-    color: var(--muted);
-  }
-  .day-focus {
-    font-size: 9px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    line-height: 1.3;
-  }
+  body.light .cal-day-bg { opacity: 0.22; }
+  .cal-day-inner { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 3px; height: 100%; }
+  .cal-day.push { border-color: #ff6b3560; background: #ff6b3510; }
+  .cal-day.pull { border-color: #47c9ff60; background: #47c9ff10; }
+  .cal-day.legs { border-color: #a78bfa60; background: #a78bfa10; }
+  .cal-day.hiit { border-color: #e8ff4760; background: #e8ff4710; }
+  .cal-day.upper { border-color: #4ade8060; background: #4ade8010; }
+  .cal-day.active { border-color: #f9a84d60; background: #f9a84d10; }
+  .cal-day.rest { border-color: var(--border); background: rgba(128,128,128,0.04); }
+  .day-num { font-family: 'Bebas Neue', sans-serif; font-size: 20px; line-height: 1; color: var(--muted); }
+  .day-focus { font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; line-height: 1.3; }
   .push .day-focus { color: var(--accent2); }
   .pull .day-focus { color: var(--accent3); }
   .legs .day-focus { color: #a78bfa; }
@@ -337,75 +360,18 @@
   .upper .day-focus { color: var(--green); }
   .active .day-focus { color: #f9a84d; }
   .rest .day-focus { color: var(--muted); }
-  .day-core {
-    font-size: 8px;
-    color: var(--muted);
-    margin-top: auto;
-    font-family: 'DM Mono', monospace;
-  }
+  .day-core { font-size: 8px; color: var(--muted); margin-top: auto; font-family: 'DM Mono', monospace; }
   .push .day-core, .pull .day-core, .legs .day-core, .hiit .day-core, .upper .day-core { color: var(--accent); }
 
-  /* CORE ROUTINE */
-  .exercise-row {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--border);
-  }
-  .exercise-row:last-child { border-bottom: none; }
-  .exercise-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 24px;
-    color: var(--border);
-    width: 32px;
-    flex-shrink: 0;
-  }
-  .exercise-info { flex: 1; }
-  .exercise-name {
-    font-weight: 600;
-    font-size: 14px;
-  }
-  .exercise-tip {
-    font-size: 11px;
-    color: var(--muted);
-    margin-top: 2px;
-  }
-  .exercise-sets {
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    color: var(--accent);
-    text-align: right;
-    flex-shrink: 0;
-  }
-
-  /* RULES */
-  .rules-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 12px;
-    margin-bottom: 32px;
-  }
-  .rule-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 16px;
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-  }
+  /* ── RULES ── */
+  .rules-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin-bottom: 32px; }
+  .rule-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; display: flex; gap: 12px; align-items: flex-start; }
   .rule-icon { font-size: 20px; flex-shrink: 0; }
   .rule-title { font-weight: 600; font-size: 13px; margin-bottom: 4px; }
   .rule-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
 
-  /* PHASE TIMELINE */
-  .phases {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-bottom: 32px;
-  }
+  /* ── PHASES ── */
+  .phases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
   .phase {
     background: var(--card);
     border: 1px solid var(--border);
@@ -414,89 +380,66 @@
     position: relative;
     overflow: hidden;
   }
-  .phase::before {
-    content: '';
+  .phase-img {
     position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
+    inset: 0; width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.1;
   }
+  body.light .phase-img { opacity: 0.14; }
+  .phase-content { position: relative; z-index: 1; }
+  .phase::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; z-index: 2; }
   .phase-1::before { background: var(--accent3); }
   .phase-2::before { background: var(--accent); }
   .phase-3::before { background: var(--accent2); }
-  .phase-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 48px;
-    line-height: 1;
-    color: var(--border);
-    margin-bottom: 4px;
-  }
-  .phase-month {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 22px;
-    margin-bottom: 8px;
-  }
+  .phase-num { font-family: 'Bebas Neue', sans-serif; font-size: 48px; line-height: 1; color: var(--border); margin-bottom: 4px; }
+  .phase-month { font-family: 'Bebas Neue', sans-serif; font-size: 22px; margin-bottom: 8px; }
   .phase-1 .phase-month { color: var(--accent3); }
   .phase-2 .phase-month { color: var(--accent); }
   .phase-3 .phase-month { color: var(--accent2); }
   .phase-focus { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
-  .phase-target {
-    background: rgba(255,255,255,0.05);
-    border-radius: 6px;
-    padding: 8px 12px;
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-  }
+  .phase-target { background: rgba(128,128,128,0.1); border-radius: 6px; padding: 8px 12px; font-family: 'DM Mono', monospace; font-size: 12px; }
   .phase-target span { color: var(--green); font-weight: 600; }
 
-  /* LEGEND */
-  .legend {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-  }
-  .legend-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 11px;
-    color: var(--muted);
-  }
-  .legend-dot {
-    width: 10px; height: 10px;
-    border-radius: 2px;
-  }
+  /* ── LEGEND ── */
+  .legend { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--muted); }
+  .legend-dot { width: 10px; height: 10px; border-radius: 2px; }
 
-  /* FOOTER */
-  .footer {
-    text-align: center;
-    padding: 32px;
-    border-top: 1px solid var(--border);
-    color: var(--muted);
-    font-size: 12px;
-    font-family: 'DM Mono', monospace;
-  }
+  /* ── FOOTER ── */
+  .footer { text-align: center; padding: 32px; border-top: 1px solid var(--border); color: var(--muted); font-size: 12px; font-family: 'DM Mono', monospace; }
 
-  /* PRINT BUTTON */
-  .print-btn {
+  /* ── FLOATING BUTTONS ── */
+  .fab-group {
     position: fixed;
     bottom: 24px; right: 24px;
-    background: var(--accent);
-    color: var(--black);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 200;
+  }
+  .fab {
     border: none;
     border-radius: 50px;
-    padding: 12px 24px;
+    padding: 12px 20px;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 0.05em;
     cursor: pointer;
-    box-shadow: 0 4px 24px rgba(232,255,71,0.3);
-    z-index: 100;
     transition: transform 0.2s, box-shadow 0.2s;
+    white-space: nowrap;
   }
-  .print-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(232,255,71,0.4);
+  .fab:hover { transform: translateY(-2px); }
+  .fab-print {
+    background: var(--accent);
+    color: #000;
+    box-shadow: 0 4px 20px rgba(232,255,71,0.3);
+  }
+  .fab-theme {
+    background: var(--card);
+    color: var(--text);
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
   }
 
   section { margin-bottom: 48px; }
@@ -505,17 +448,23 @@
     .phases { grid-template-columns: 1fr; }
     .meal-grid { grid-template-columns: 1fr; }
     .hero h1 { font-size: 52px; }
-    .cal-day { min-height: 60px; }
+    .cal-day { min-height: 64px; }
     .day-focus { font-size: 7px; }
+    .workout-banner { min-height: 110px; }
   }
 </style>
 </head>
 <body>
 
-<button class="print-btn no-print" onclick="window.print()">🖨 Print / Save PDF</button>
+<div class="fab-group no-print">
+  <button class="fab fab-theme" onclick="toggleTheme()" id="themeBtn">☀️ Light Mode</button>
+  <button class="fab fab-print" onclick="window.print()">🖨 Print / Save PDF</button>
+</div>
 
 <!-- HERO -->
 <div class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
   <div class="hero-tag">🎯 Transformation Plan · June 1 – September 1, 2026</div>
   <h1>LOSE <span>6KG</span><br>BUILD <span>ABS</span></h1>
   <div class="hero-stats">
@@ -524,6 +473,7 @@
     <div class="stat"><div class="stat-val">132g</div><div class="stat-label">Daily Protein</div></div>
     <div class="stat"><div class="stat-val">3.8L</div><div class="stat-label">Daily Water</div></div>
     <div class="stat"><div class="stat-val">90</div><div class="stat-label">Days</div></div>
+  </div>
   </div>
 </div>
 
@@ -534,22 +484,31 @@
     <div class="section-title"><span class="icon">🗺️</span> 3-Month Roadmap <div class="line"></div></div>
     <div class="phases">
       <div class="phase phase-1">
+        <img class="phase-img" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=70" alt="">
+        <div class="phase-content">
         <div class="phase-num">01</div>
         <div class="phase-month">JUNE — Foundation</div>
         <div class="phase-focus">Build the habit. Lock in form. Enter consistent calorie deficit.</div>
         <div class="phase-target">Target: <span>−2.5 kg</span></div>
+        </div>
       </div>
       <div class="phase phase-2">
+        <img class="phase-img" src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=400&q=70" alt="">
+        <div class="phase-content">
         <div class="phase-num">02</div>
         <div class="phase-month">JULY — Intensity</div>
         <div class="phase-focus">Progressive overload. HIIT 2×/week. Core strength increasing.</div>
         <div class="phase-target">Target: <span>−2 kg</span></div>
+        </div>
       </div>
       <div class="phase phase-3">
+        <img class="phase-img" src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=400&q=70" alt="">
+        <div class="phase-content">
         <div class="phase-num">03</div>
         <div class="phase-month">AUG — Shred</div>
         <div class="phase-focus">Carb cycling. HIIT 3×/week. Abs start becoming visible.</div>
         <div class="phase-target">Target: <span>−1.5 kg + visible abs</span></div>
+        </div>
       </div>
     </div>
   </section>
@@ -561,6 +520,7 @@
     <div class="meal-grid">
       <!-- Pre-workout -->
       <div class="meal-card">
+        <img class="meal-img" src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=400&q=70" alt="Pre workout fuel">
         <div class="meal-header">
           <div>
             <div class="meal-time">6:00 AM · Pre-Workout</div>
@@ -581,6 +541,7 @@
 
       <!-- Breakfast -->
       <div class="meal-card">
+        <img class="meal-img" src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=400&q=70" alt="Breakfast eggs">
         <div class="meal-header">
           <div>
             <div class="meal-time">8:00–8:30 AM · Post-Workout</div>
@@ -603,6 +564,7 @@
 
       <!-- Mid-morning -->
       <div class="meal-card">
+        <img class="meal-img" src="https://images.unsplash.com/photo-1593095948071-474c5cc2989d?w=400&q=70" alt="Protein snack">
         <div class="meal-header">
           <div>
             <div class="meal-time">11:00 AM · Mid-Morning</div>
@@ -624,6 +586,7 @@
 
       <!-- Lunch -->
       <div class="meal-card">
+        <img class="meal-img" src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?w=400&q=70" alt="Indian lunch dal rice">
         <div class="meal-header">
           <div>
             <div class="meal-time">1:00–1:30 PM · Lunch</div>
@@ -646,6 +609,7 @@
 
       <!-- Evening snack -->
       <div class="meal-card">
+        <img class="meal-img" src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=400&q=70" alt="Evening snack boiled eggs">
         <div class="meal-header">
           <div>
             <div class="meal-time">4:30–5:00 PM · Evening</div>
@@ -666,6 +630,7 @@
 
       <!-- Dinner -->
       <div class="meal-card">
+        <img class="meal-img" src="https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?w=400&q=70" alt="Light dinner omelette">
         <div class="meal-header">
           <div>
             <div class="meal-time">7:30–8:00 PM · Dinner</div>
@@ -759,6 +724,55 @@
   <!-- JUNE CALENDAR -->
   <section class="page-break">
     <div class="section-title"><span class="icon">📅</span> June 2026 — Workout Calendar <div class="line"></div></div>
+
+    <!-- Workout Type Image Banners -->
+    <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap:10px; margin-bottom:20px;">
+      <div class="workout-banner">
+        <img src="https://images.unsplash.com/photo-1616279969856-759f316a5ac1?w=400&q=70" alt="Push workout">
+        <div class="workout-banner-overlay"></div>
+        <div class="workout-banner-content">
+          <div class="workout-banner-title">PUSH</div>
+          <div class="workout-banner-sub">Chest · Shoulders · Triceps</div>
+        </div>
+        <div class="workout-banner-badge" style="background:#ff6b35;">MON</div>
+      </div>
+      <div class="workout-banner">
+        <img src="https://images.unsplash.com/photo-1530822847156-5df684ec5933?w=400&q=70" alt="Pull workout">
+        <div class="workout-banner-overlay"></div>
+        <div class="workout-banner-content">
+          <div class="workout-banner-title">PULL</div>
+          <div class="workout-banner-sub">Back · Biceps · Rows</div>
+        </div>
+        <div class="workout-banner-badge" style="background:#47c9ff; color:#000;">TUE</div>
+      </div>
+      <div class="workout-banner">
+        <img src="https://images.unsplash.com/photo-1434608519344-49d77a124f38?w=400&q=70" alt="Legs workout">
+        <div class="workout-banner-overlay"></div>
+        <div class="workout-banner-content">
+          <div class="workout-banner-title">LEGS</div>
+          <div class="workout-banner-sub">Quads · Glutes · Hamstrings</div>
+        </div>
+        <div class="workout-banner-badge" style="background:#a78bfa;">WED</div>
+      </div>
+      <div class="workout-banner">
+        <img src="https://images.unsplash.com/photo-1549576490-b0b4831ef60a?w=400&q=70" alt="HIIT workout">
+        <div class="workout-banner-overlay"></div>
+        <div class="workout-banner-content">
+          <div class="workout-banner-title">HIIT</div>
+          <div class="workout-banner-sub">Cardio · Burn · Interval</div>
+        </div>
+        <div class="workout-banner-badge">THU</div>
+      </div>
+      <div class="workout-banner">
+        <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=400&q=70" alt="Abs workout">
+        <div class="workout-banner-overlay"></div>
+        <div class="workout-banner-content">
+          <div class="workout-banner-title">ABS CORE</div>
+          <div class="workout-banner-sub">Every session · 15–18 min</div>
+        </div>
+        <div class="workout-banner-badge" style="background:#4ade80; color:#000;">DAILY</div>
+      </div>
+    </div>
 
     <div class="legend">
       <div class="legend-item"><div class="legend-dot" style="background:#ff6b35;"></div> Push (Chest/Shoulders/Triceps)</div>
@@ -988,6 +1002,7 @@
       <div class="card-title">Do this at the END of every workout session</div>
       <div class="exercise-row">
         <div class="exercise-num">01</div>
+        <img class="exercise-img" src="https://images.unsplash.com/photo-1607962837359-5e7e89f86776?w=120&q=70" alt="Dead bug">
         <div class="exercise-info">
           <div class="exercise-name">Dead Bug</div>
           <div class="exercise-tip">Arms up, lower opposite arm + leg slowly. Protects lower back.</div>
@@ -996,6 +1011,7 @@
       </div>
       <div class="exercise-row">
         <div class="exercise-num">02</div>
+        <img class="exercise-img" src="https://images.unsplash.com/photo-1566241134883-13eb2393a3fd?w=120&q=70" alt="Plank">
         <div class="exercise-info">
           <div class="exercise-name">Plank (Hold)</div>
           <div class="exercise-tip">Elbows under shoulders. Don't let hips sag or rise.</div>
@@ -1004,6 +1020,7 @@
       </div>
       <div class="exercise-row">
         <div class="exercise-num">03</div>
+        <img class="exercise-img" src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=120&q=70" alt="Bicycle crunches">
         <div class="exercise-info">
           <div class="exercise-name">Bicycle Crunches</div>
           <div class="exercise-tip">Slow and controlled. Don't yank your neck.</div>
@@ -1012,6 +1029,7 @@
       </div>
       <div class="exercise-row">
         <div class="exercise-num">04</div>
+        <img class="exercise-img" src="https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?w=120&q=70" alt="Leg raises">
         <div class="exercise-info">
           <div class="exercise-name">Hanging / Lying Leg Raises</div>
           <div class="exercise-tip">Lower slowly (3 sec). Lower abs + hip flexors.</div>
@@ -1020,6 +1038,7 @@
       </div>
       <div class="exercise-row">
         <div class="exercise-num">05</div>
+        <img class="exercise-img" src="https://images.unsplash.com/photo-1598971861713-54ad16a7e72e?w=120&q=70" alt="Mountain climbers">
         <div class="exercise-info">
           <div class="exercise-name">Mountain Climbers</div>
           <div class="exercise-tip">Fast pace. Great for cardio + core combo.</div>
@@ -1086,6 +1105,41 @@
 <div class="footer">
   Yuvraj's 90-Day Transformation Plan · June 1 – September 1, 2026 · Built with precision 💪
 </div>
+
+<script>
+  function toggleTheme() {
+    const body = document.body;
+    const btn = document.getElementById('themeBtn');
+    body.classList.toggle('light');
+    btn.textContent = body.classList.contains('light') ? '🌙 Dark Mode' : '☀️ Light Mode';
+  }
+
+  // Inject background images into calendar day cells
+  const calImgs = {
+    push: 'https://images.unsplash.com/photo-1616279969856-759f316a5ac1?w=200&q=60',
+    pull: 'https://images.unsplash.com/photo-1530822847156-5df684ec5933?w=200&q=60',
+    legs: 'https://images.unsplash.com/photo-1434608519344-49d77a124f38?w=200&q=60',
+    hiit: 'https://images.unsplash.com/photo-1549576490-b0b4831ef60a?w=200&q=60',
+    upper: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=200&q=60',
+    active: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=200&q=60',
+  };
+
+  document.querySelectorAll('.cal-day:not(.empty):not(.rest)').forEach(day => {
+    const type = Array.from(day.classList).find(c => calImgs[c]);
+    if (type) {
+      const img = document.createElement('img');
+      img.src = calImgs[type];
+      img.className = 'cal-day-bg';
+      img.alt = '';
+      // Wrap existing children
+      const inner = document.createElement('div');
+      inner.className = 'cal-day-inner';
+      while (day.firstChild) inner.appendChild(day.firstChild);
+      day.appendChild(img);
+      day.appendChild(inner);
+    }
+  });
+</script>
 
 </body>
 </html>
