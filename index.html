@@ -58,7 +58,7 @@
 
   /* ── HERO WITH BACKGROUND IMAGE ── */
   .hero {
-    background-image: url('https://source.unsplash.com/1400x600/?gym,fitness,workout');
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 40%, #16213e 70%, #0f3460 100%);
     background-size: cover;
     background-position: center 30%;
     border-bottom: 1px solid var(--border);
@@ -254,6 +254,10 @@
     width: 100%;
     height: 100px;
     object-fit: cover;
+  }
+  .meal-img-grad {
+    width: 100%;
+    height: 80px;
   }
   .meal-header {
     padding: 12px 16px;
@@ -484,7 +488,7 @@
     <div class="section-title"><span class="icon">🗺️</span> 3-Month Roadmap <div class="line"></div></div>
     <div class="phases">
       <div class="phase phase-1">
-        <img class="phase-img" src="https://source.unsplash.com/400x300/?fitness,training" alt="">
+        
         <div class="phase-content">
         <div class="phase-num">01</div>
         <div class="phase-month">JUNE — Foundation</div>
@@ -493,7 +497,7 @@
         </div>
       </div>
       <div class="phase phase-2">
-        <img class="phase-img" src="https://source.unsplash.com/400x300/?hiit,running" alt="">
+        
         <div class="phase-content">
         <div class="phase-num">02</div>
         <div class="phase-month">JULY — Intensity</div>
@@ -502,7 +506,7 @@
         </div>
       </div>
       <div class="phase phase-3">
-        <img class="phase-img" src="https://source.unsplash.com/400x300/?abs,core,workout" alt="">
+        
         <div class="phase-content">
         <div class="phase-num">03</div>
         <div class="phase-month">AUG — Shred</div>
@@ -520,7 +524,7 @@
     <div class="meal-grid">
       <!-- Pre-workout -->
       <div class="meal-card">
-        <img class="meal-img" src="https://source.unsplash.com/400x140/?banana,coffee,morning" alt="Pre workout fuel">
+        <div class="meal-img-grad" style="background:linear-gradient(135deg,#f6a623,#e8623a);display:flex;align-items:center;justify-content:center;gap:10px;"><span style="font-size:28px;">🍌</span><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:rgba(255,255,255,0.9);letter-spacing:0.1em;">PRE-WORKOUT</span></div>
         <div class="meal-header">
           <div>
             <div class="meal-time">6:00 AM · Pre-Workout</div>
@@ -541,7 +545,7 @@
 
       <!-- Breakfast -->
       <div class="meal-card">
-        <img class="meal-img" src="https://source.unsplash.com/400x140/?eggs,breakfast,healthy" alt="Breakfast eggs">
+        <div class="meal-img-grad" style="background:linear-gradient(135deg,#f7971e,#ffd200);display:flex;align-items:center;justify-content:center;gap:10px;"><span style="font-size:28px;">🥚</span><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:rgba(255,255,255,0.9);letter-spacing:0.1em;">BREAKFAST</span></div>
         <div class="meal-header">
           <div>
             <div class="meal-time">8:00–8:30 AM · Post-Workout</div>
@@ -564,7 +568,7 @@
 
       <!-- Mid-morning -->
       <div class="meal-card">
-        <img class="meal-img" src="https://source.unsplash.com/400x140/?protein,nuts,snack" alt="Protein snack">
+        <div class="meal-img-grad" style="background:linear-gradient(135deg,#56ab2f,#a8e063);display:flex;align-items:center;justify-content:center;gap:10px;"><span style="font-size:28px;">💪</span><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:rgba(255,255,255,0.9);letter-spacing:0.1em;">MID-MORNING</span></div>
         <div class="meal-header">
           <div>
             <div class="meal-time">11:00 AM · Mid-Morning</div>
@@ -586,7 +590,7 @@
 
       <!-- Lunch -->
       <div class="meal-card">
-        <img class="meal-img" src="https://source.unsplash.com/400x140/?dal,rice,indian,food" alt="Indian lunch dal rice">
+        <div class="meal-img-grad" style="background:linear-gradient(135deg,#f46b45,#eea849);display:flex;align-items:center;justify-content:center;gap:10px;"><span style="font-size:28px;">🍛</span><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:rgba(255,255,255,0.9);letter-spacing:0.1em;">LUNCH</span></div>
         <div class="meal-header">
           <div>
             <div class="meal-time">1:00–1:30 PM · Lunch</div>
@@ -609,7 +613,7 @@
 
       <!-- Evening snack -->
       <div class="meal-card">
-        <img class="meal-img" src="https://source.unsplash.com/400x140/?boiled,egg,apple" alt="Evening snack boiled eggs">
+        <div class="meal-img-grad" style="background:linear-gradient(135deg,#4facfe,#00f2fe);display:flex;align-items:center;justify-content:center;gap:10px;"><span style="font-size:28px;">🥚</span><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:rgba(255,255,255,0.9);letter-spacing:0.1em;">SNACK</span></div>
         <div class="meal-header">
           <div>
             <div class="meal-time">4:30–5:00 PM · Evening</div>
@@ -630,7 +634,7 @@
 
       <!-- Dinner -->
       <div class="meal-card">
-        <img class="meal-img" src="https://source.unsplash.com/400x140/?omelette,dinner,healthy" alt="Light dinner omelette">
+        <div class="meal-img-grad" style="background:linear-gradient(135deg,#a18cd1,#fbc2eb);display:flex;align-items:center;justify-content:center;gap:10px;"><span style="font-size:28px;">🍳</span><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:rgba(255,255,255,0.9);letter-spacing:0.1em;">DINNER</span></div>
         <div class="meal-header">
           <div>
             <div class="meal-time">7:30–8:00 PM · Dinner</div>
@@ -728,7 +732,7 @@
     <!-- Workout Type Image Banners -->
     <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap:10px; margin-bottom:20px;">
       <div class="workout-banner">
-        <img src="https://source.unsplash.com/400x200/?chest,pushup" alt="Push workout">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#ff6b35 0%,#c0392b 100%);opacity:0.9;"></div>
         <div class="workout-banner-overlay"></div>
         <div class="workout-banner-content">
           <div class="workout-banner-title">PUSH</div>
@@ -737,7 +741,7 @@
         <div class="workout-banner-badge" style="background:#ff6b35;">MON</div>
       </div>
       <div class="workout-banner">
-        <img src="https://source.unsplash.com/400x200/?pullup,back,exercise" alt="Pull workout">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#47c9ff 0%,#0e5a8a 100%);opacity:0.9;"></div>
         <div class="workout-banner-overlay"></div>
         <div class="workout-banner-content">
           <div class="workout-banner-title">PULL</div>
@@ -746,7 +750,7 @@
         <div class="workout-banner-badge" style="background:#47c9ff; color:#000;">TUE</div>
       </div>
       <div class="workout-banner">
-        <img src="https://source.unsplash.com/400x200/?squat,legs,gym" alt="Legs workout">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#a78bfa 0%,#5b21b6 100%);opacity:0.9;"></div>
         <div class="workout-banner-overlay"></div>
         <div class="workout-banner-content">
           <div class="workout-banner-title">LEGS</div>
@@ -755,7 +759,7 @@
         <div class="workout-banner-badge" style="background:#a78bfa;">WED</div>
       </div>
       <div class="workout-banner">
-        <img src="https://source.unsplash.com/400x200/?hiit,cardio,sprint" alt="HIIT workout">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#e8ff47 0%,#9ca300 100%);opacity:0.9;"></div>
         <div class="workout-banner-overlay"></div>
         <div class="workout-banner-content">
           <div class="workout-banner-title">HIIT</div>
@@ -764,7 +768,7 @@
         <div class="workout-banner-badge">THU</div>
       </div>
       <div class="workout-banner">
-        <img src="https://source.unsplash.com/400x200/?abs,core,crunch" alt="Abs workout">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#4ade80 0%,#15803d 100%);opacity:0.9;"></div>
         <div class="workout-banner-overlay"></div>
         <div class="workout-banner-content">
           <div class="workout-banner-title">ABS CORE</div>
@@ -1002,7 +1006,7 @@
       <div class="card-title">Do this at the END of every workout session</div>
       <div class="exercise-row">
         <div class="exercise-num">01</div>
-        <img class="exercise-img" src="https://source.unsplash.com/120x120/?exercise,floor" alt="Dead bug">
+        <div class="exercise-img" style="background:#1a1a2e;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">🐛</div>
         <div class="exercise-info">
           <div class="exercise-name">Dead Bug</div>
           <div class="exercise-tip">Arms up, lower opposite arm + leg slowly. Protects lower back.</div>
@@ -1011,7 +1015,7 @@
       </div>
       <div class="exercise-row">
         <div class="exercise-num">02</div>
-        <img class="exercise-img" src="https://source.unsplash.com/120x120/?plank,core" alt="Plank">
+        <div class="exercise-img" style="background:#0f3460;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">🧱</div>
         <div class="exercise-info">
           <div class="exercise-name">Plank (Hold)</div>
           <div class="exercise-tip">Elbows under shoulders. Don't let hips sag or rise.</div>
@@ -1020,7 +1024,7 @@
       </div>
       <div class="exercise-row">
         <div class="exercise-num">03</div>
-        <img class="exercise-img" src="https://source.unsplash.com/120x120/?crunch,abs" alt="Bicycle crunches">
+        <div class="exercise-img" style="background:#1a2e1a;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">🚴</div>
         <div class="exercise-info">
           <div class="exercise-name">Bicycle Crunches</div>
           <div class="exercise-tip">Slow and controlled. Don't yank your neck.</div>
@@ -1029,7 +1033,7 @@
       </div>
       <div class="exercise-row">
         <div class="exercise-num">04</div>
-        <img class="exercise-img" src="https://source.unsplash.com/120x120/?leg,raise,fitness" alt="Leg raises">
+        <div class="exercise-img" style="background:#2e1a1a;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">🦵</div>
         <div class="exercise-info">
           <div class="exercise-name">Hanging / Lying Leg Raises</div>
           <div class="exercise-tip">Lower slowly (3 sec). Lower abs + hip flexors.</div>
@@ -1038,7 +1042,7 @@
       </div>
       <div class="exercise-row">
         <div class="exercise-num">05</div>
-        <img class="exercise-img" src="https://source.unsplash.com/120x120/?mountain,climber,workout" alt="Mountain climbers">
+        <div class="exercise-img" style="background:#1a2e2e;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">🏃</div>
         <div class="exercise-info">
           <div class="exercise-name">Mountain Climbers</div>
           <div class="exercise-tip">Fast pace. Great for cardio + core combo.</div>
@@ -1115,27 +1119,25 @@
   }
 
   // Inject background images into calendar day cells
-  const calImgs = {
-    push: 'https://source.unsplash.com/200x160/?chest,pushup,gym',
-    pull: 'https://source.unsplash.com/200x160/?pullup,back,row',
-    legs: 'https://source.unsplash.com/200x160/?squat,legs,fitness',
-    hiit: 'https://source.unsplash.com/200x160/?hiit,cardio,running',
-    upper: 'https://source.unsplash.com/200x160/?upper,body,gym',
-    active: 'https://source.unsplash.com/200x160/?yoga,walk,nature',
+  const calGrads = {
+    push:   'linear-gradient(135deg,rgba(255,107,53,0.35),rgba(192,57,43,0.35))',
+    pull:   'linear-gradient(135deg,rgba(71,201,255,0.35),rgba(14,90,138,0.35))',
+    legs:   'linear-gradient(135deg,rgba(167,139,250,0.35),rgba(91,33,182,0.35))',
+    hiit:   'linear-gradient(135deg,rgba(232,255,71,0.35),rgba(156,163,0,0.35))',
+    upper:  'linear-gradient(135deg,rgba(74,222,128,0.35),rgba(21,128,61,0.35))',
+    active: 'linear-gradient(135deg,rgba(249,168,77,0.35),rgba(201,123,10,0.35))',
   };
 
   document.querySelectorAll('.cal-day:not(.empty):not(.rest)').forEach(day => {
-    const type = Array.from(day.classList).find(c => calImgs[c]);
+    const type = Array.from(day.classList).find(c => calGrads[c]);
     if (type) {
-      const img = document.createElement('img');
-      img.src = calImgs[type];
-      img.className = 'cal-day-bg';
-      img.alt = '';
-      // Wrap existing children
+      const gradDiv = document.createElement('div');
+      gradDiv.style.cssText = 'position:absolute;inset:0;background:' + calGrads[type] + ';border-radius:7px;';
       const inner = document.createElement('div');
       inner.className = 'cal-day-inner';
       while (day.firstChild) inner.appendChild(day.firstChild);
-      day.appendChild(img);
+      day.style.position = 'relative';
+      day.appendChild(gradDiv);
       day.appendChild(inner);
     }
   });
