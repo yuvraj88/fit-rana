@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -22,441 +23,442 @@
     --section-bg-overlay: rgba(10,10,10,0.82);
   }
 
-  /* ── LIGHT THEME ── */
-  body.light {
-    --black: #f4f4f0;
-    --dark: #e8e8e2;
-    --card: #ffffff;
-    --border: #d4d4cc;
-    --accent: #b5c400;
-    --accent2: #d44e18;
-    --accent3: #0a9cc8;
-    --text: #1a1a1a;
-    --muted: #666;
-    --green: #16a34a;
-    --hero-overlay: rgba(255,255,255,0.55);
-    --section-bg-overlay: rgba(244,244,240,0.88);
-  }
+/* ── LIGHT THEME ── */
+body.light {
+–black: #f4f4f0;
+–dark: #e8e8e2;
+–card: #ffffff;
+–border: #d4d4cc;
+–accent: #b5c400;
+–accent2: #d44e18;
+–accent3: #0a9cc8;
+–text: #1a1a1a;
+–muted: #666;
+–green: #16a34a;
+–hero-overlay: rgba(255,255,255,0.55);
+–section-bg-overlay: rgba(244,244,240,0.88);
+}
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+- { margin: 0; padding: 0; box-sizing: border-box; }
 
-  body {
-    background: var(--black);
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    line-height: 1.6;
-    transition: background 0.3s, color 0.3s;
-  }
+body {
+background: var(–black);
+color: var(–text);
+font-family: ‘DM Sans’, sans-serif;
+font-size: 14px;
+line-height: 1.6;
+transition: background 0.3s, color 0.3s;
+}
 
-  @media print {
-    body { background: white; color: #111; font-size: 11px; }
-    .no-print { display: none; }
-    .page-break { page-break-before: always; }
-    section { page-break-inside: avoid; }
-  }
+@media print {
+body { background: white; color: #111; font-size: 11px; }
+.no-print { display: none; }
+.page-break { page-break-before: always; }
+section { page-break-inside: avoid; }
+}
 
-  /* ── HERO WITH BACKGROUND IMAGE ── */
-  .hero {
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 40%, #16213e 70%, #0f3460 100%);
-    background-size: cover;
-    background-position: center 30%;
-    border-bottom: 1px solid var(--border);
-    padding: 80px 32px 60px;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: var(--hero-overlay);
-    backdrop-filter: blur(1px);
-  }
-  .hero-content { position: relative; z-index: 2; }
-  .hero-tag {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--accent);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-    text-shadow: 0 1px 8px rgba(0,0,0,0.5);
-  }
-  .hero h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(56px, 10vw, 100px);
-    line-height: 0.92;
-    letter-spacing: 0.02em;
-    color: #fff;
-    margin-bottom: 16px;
-    text-shadow: 0 2px 20px rgba(0,0,0,0.6);
-  }
-  body.light .hero h1 { color: #fff; }
-  .hero h1 span { color: var(--accent); }
-  .hero-stats {
-    display: flex;
-    gap: 32px;
-    flex-wrap: wrap;
-    margin-top: 28px;
-  }
-  .stat { display: flex; flex-direction: column; }
-  .stat-val {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 30px;
-    color: var(--accent);
-    line-height: 1;
-    text-shadow: 0 1px 8px rgba(0,0,0,0.4);
-  }
-  .stat-label {
-    font-size: 11px;
-    color: rgba(255,255,255,0.7);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-top: 2px;
-  }
+/* ── HERO WITH BACKGROUND IMAGE ── */
+.hero {
+background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 40%, #16213e 70%, #0f3460 100%);
+background-size: cover;
+background-position: center 30%;
+border-bottom: 1px solid var(–border);
+padding: 80px 32px 60px;
+position: relative;
+overflow: hidden;
+}
+.hero-overlay {
+position: absolute;
+inset: 0;
+background: var(–hero-overlay);
+backdrop-filter: blur(1px);
+}
+.hero-content { position: relative; z-index: 2; }
+.hero-tag {
+font-family: ‘DM Mono’, monospace;
+font-size: 11px;
+color: var(–accent);
+letter-spacing: 0.2em;
+text-transform: uppercase;
+margin-bottom: 12px;
+text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+}
+.hero h1 {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: clamp(56px, 10vw, 100px);
+line-height: 0.92;
+letter-spacing: 0.02em;
+color: #fff;
+margin-bottom: 16px;
+text-shadow: 0 2px 20px rgba(0,0,0,0.6);
+}
+body.light .hero h1 { color: #fff; }
+.hero h1 span { color: var(–accent); }
+.hero-stats {
+display: flex;
+gap: 32px;
+flex-wrap: wrap;
+margin-top: 28px;
+}
+.stat { display: flex; flex-direction: column; }
+.stat-val {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 30px;
+color: var(–accent);
+line-height: 1;
+text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+}
+.stat-label {
+font-size: 11px;
+color: rgba(255,255,255,0.7);
+text-transform: uppercase;
+letter-spacing: 0.1em;
+margin-top: 2px;
+}
 
-  /* ── WORKOUT SECTION BANNERS ── */
-  .workout-banner {
-    border-radius: 14px;
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 24px;
-    min-height: 140px;
-    display: flex;
-    align-items: flex-end;
-  }
-  .workout-banner img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 25%;
-  }
-  .workout-banner-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to right, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.25) 100%);
-  }
-  .workout-banner-content {
-    position: relative;
-    z-index: 2;
-    padding: 20px 24px;
-    width: 100%;
-  }
-  .workout-banner-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 28px;
-    color: #fff;
-    letter-spacing: 0.05em;
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-  .workout-banner-sub {
-    font-size: 12px;
-    color: rgba(255,255,255,0.75);
-    font-family: 'DM Mono', monospace;
-  }
-  .workout-banner-badge {
-    position: absolute;
-    top: 14px; right: 14px;
-    background: var(--accent);
-    color: #000;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 14px;
-    padding: 3px 10px;
-    border-radius: 20px;
-    z-index: 3;
-    letter-spacing: 0.05em;
-  }
+/* ── WORKOUT SECTION BANNERS ── */
+.workout-banner {
+border-radius: 14px;
+overflow: hidden;
+position: relative;
+margin-bottom: 24px;
+min-height: 140px;
+display: flex;
+align-items: flex-end;
+}
+.workout-banner img {
+position: absolute;
+inset: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+object-position: center 25%;
+}
+.workout-banner-overlay {
+position: absolute;
+inset: 0;
+background: linear-gradient(to right, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.25) 100%);
+}
+.workout-banner-content {
+position: relative;
+z-index: 2;
+padding: 20px 24px;
+width: 100%;
+}
+.workout-banner-title {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 28px;
+color: #fff;
+letter-spacing: 0.05em;
+line-height: 1;
+margin-bottom: 4px;
+}
+.workout-banner-sub {
+font-size: 12px;
+color: rgba(255,255,255,0.75);
+font-family: ‘DM Mono’, monospace;
+}
+.workout-banner-badge {
+position: absolute;
+top: 14px; right: 14px;
+background: var(–accent);
+color: #000;
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 14px;
+padding: 3px 10px;
+border-radius: 20px;
+z-index: 3;
+letter-spacing: 0.05em;
+}
 
-  /* ── EXERCISE IMAGE CARDS ── */
-  .exercise-row {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--border);
-  }
-  .exercise-row:last-child { border-bottom: none; }
-  .exercise-img {
-    width: 56px;
-    height: 56px;
-    border-radius: 8px;
-    object-fit: cover;
-    flex-shrink: 0;
-    border: 1px solid var(--border);
-  }
-  .exercise-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 24px;
-    color: var(--border);
-    width: 28px;
-    flex-shrink: 0;
-  }
-  .exercise-info { flex: 1; }
-  .exercise-name { font-weight: 600; font-size: 14px; }
-  .exercise-tip { font-size: 11px; color: var(--muted); margin-top: 2px; }
-  .exercise-sets {
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    color: var(--accent);
-    text-align: right;
-    flex-shrink: 0;
-  }
+/* ── EXERCISE IMAGE CARDS ── */
+.exercise-row {
+display: flex;
+align-items: center;
+gap: 16px;
+padding: 12px 0;
+border-bottom: 1px solid var(–border);
+}
+.exercise-row:last-child { border-bottom: none; }
+.exercise-img {
+width: 56px;
+height: 56px;
+border-radius: 8px;
+object-fit: cover;
+flex-shrink: 0;
+border: 1px solid var(–border);
+}
+.exercise-num {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 24px;
+color: var(–border);
+width: 28px;
+flex-shrink: 0;
+}
+.exercise-info { flex: 1; }
+.exercise-name { font-weight: 600; font-size: 14px; }
+.exercise-tip { font-size: 11px; color: var(–muted); margin-top: 2px; }
+.exercise-sets {
+font-family: ‘DM Mono’, monospace;
+font-size: 12px;
+color: var(–accent);
+text-align: right;
+flex-shrink: 0;
+}
 
-  /* ── LAYOUT ── */
-  .container { max-width: 960px; margin: 0 auto; padding: 32px 24px; }
-  .section-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 32px;
-    letter-spacing: 0.05em;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--text);
-  }
-  .section-title .icon { font-size: 24px; }
-  .section-title .line { flex: 1; height: 1px; background: var(--border); margin-left: 8px; }
+/* ── LAYOUT ── */
+.container { max-width: 960px; margin: 0 auto; padding: 32px 24px; }
+.section-title {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 32px;
+letter-spacing: 0.05em;
+margin-bottom: 20px;
+display: flex;
+align-items: center;
+gap: 12px;
+color: var(–text);
+}
+.section-title .icon { font-size: 24px; }
+.section-title .line { flex: 1; height: 1px; background: var(–border); margin-left: 8px; }
 
-  /* ── CARDS ── */
-  .card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 16px;
-  }
-  .card-title {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    margin-bottom: 12px;
-  }
+/* ── CARDS ── */
+.card {
+background: var(–card);
+border: 1px solid var(–border);
+border-radius: 12px;
+padding: 20px;
+margin-bottom: 16px;
+}
+.card-title {
+font-family: ‘DM Mono’, monospace;
+font-size: 11px;
+color: var(–accent);
+text-transform: uppercase;
+letter-spacing: 0.15em;
+margin-bottom: 12px;
+}
 
-  /* ── MEAL PLAN ── */
-  .meal-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 16px;
-    margin-bottom: 32px;
-  }
-  .meal-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-  }
-  .meal-img {
-    width: 100%;
-    height: 100px;
-    object-fit: cover;
-  }
-  .meal-img-grad {
-    width: 100%;
-    height: 80px;
-  }
-  .meal-header {
-    padding: 12px 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--border);
-  }
-  .meal-time { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); }
-  .meal-name { font-weight: 600; font-size: 13px; }
-  .meal-macros { display: flex; gap: 12px; }
-  .macro { text-align: center; }
-  .macro-val { font-family: 'Bebas Neue', sans-serif; font-size: 18px; line-height: 1; }
-  .macro-val.cal { color: var(--accent2); }
-  .macro-val.pro { color: var(--accent); }
-  .macro-label { font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
-  .meal-body { padding: 12px 16px; }
-  .meal-items { list-style: none; }
-  .meal-items li {
-    font-size: 13px;
-    color: var(--text);
-    padding: 3px 0;
-    border-bottom: 1px solid rgba(128,128,128,0.1);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .meal-items li::before { content: '·'; color: var(--accent); font-size: 18px; line-height: 1; flex-shrink: 0; }
-  .meal-items li:last-child { border-bottom: none; }
+/* ── MEAL PLAN ── */
+.meal-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+gap: 16px;
+margin-bottom: 32px;
+}
+.meal-card {
+background: var(–card);
+border: 1px solid var(–border);
+border-radius: 12px;
+overflow: hidden;
+}
+.meal-img {
+width: 100%;
+height: 100px;
+object-fit: cover;
+}
+.meal-img-grad {
+width: 100%;
+height: 80px;
+}
+.meal-header {
+padding: 12px 16px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid var(–border);
+}
+.meal-time { font-family: ‘DM Mono’, monospace; font-size: 11px; color: var(–muted); }
+.meal-name { font-weight: 600; font-size: 13px; }
+.meal-macros { display: flex; gap: 12px; }
+.macro { text-align: center; }
+.macro-val { font-family: ‘Bebas Neue’, sans-serif; font-size: 18px; line-height: 1; }
+.macro-val.cal { color: var(–accent2); }
+.macro-val.pro { color: var(–accent); }
+.macro-label { font-size: 9px; color: var(–muted); text-transform: uppercase; letter-spacing: 0.1em; }
+.meal-body { padding: 12px 16px; }
+.meal-items { list-style: none; }
+.meal-items li {
+font-size: 13px;
+color: var(–text);
+padding: 3px 0;
+border-bottom: 1px solid rgba(128,128,128,0.1);
+display: flex;
+align-items: center;
+gap: 8px;
+}
+.meal-items li::before { content: ‘·’; color: var(–accent); font-size: 18px; line-height: 1; flex-shrink: 0; }
+.meal-items li:last-child { border-bottom: none; }
 
-  /* ── TOTALS BAR ── */
-  .totals-bar {
-    background: var(--accent);
-    color: #000;
-    border-radius: 12px;
-    padding: 16px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 32px;
-  }
-  .totals-bar .t-label { font-family: 'Bebas Neue', sans-serif; font-size: 20px; }
-  .totals-bar .t-vals { display: flex; gap: 24px; }
-  .totals-bar .t-item { text-align: center; }
-  .totals-bar .t-num { font-family: 'Bebas Neue', sans-serif; font-size: 28px; line-height: 1; }
-  .totals-bar .t-sub { font-size: 10px; font-family: 'DM Mono', monospace; text-transform: uppercase; opacity: 0.7; }
+/* ── TOTALS BAR ── */
+.totals-bar {
+background: var(–accent);
+color: #000;
+border-radius: 12px;
+padding: 16px 24px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+gap: 12px;
+margin-bottom: 32px;
+}
+.totals-bar .t-label { font-family: ‘Bebas Neue’, sans-serif; font-size: 20px; }
+.totals-bar .t-vals { display: flex; gap: 24px; }
+.totals-bar .t-item { text-align: center; }
+.totals-bar .t-num { font-family: ‘Bebas Neue’, sans-serif; font-size: 28px; line-height: 1; }
+.totals-bar .t-sub { font-size: 10px; font-family: ‘DM Mono’, monospace; text-transform: uppercase; opacity: 0.7; }
 
-  /* ── WATER ── */
-  .water-row { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
-  .water-row:last-child { border-bottom: none; }
-  .water-time { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); width: 175px; flex-shrink: 0; }
-  .water-bar-wrap { flex: 1; height: 6px; background: var(--border); border-radius: 4px; overflow: hidden; }
-  .water-bar { height: 100%; background: var(--accent3); border-radius: 4px; }
-  .water-amt { font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: var(--accent3); width: 60px; text-align: right; }
+/* ── WATER ── */
+.water-row { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(–border); }
+.water-row:last-child { border-bottom: none; }
+.water-time { font-family: ‘DM Mono’, monospace; font-size: 11px; color: var(–muted); width: 175px; flex-shrink: 0; }
+.water-bar-wrap { flex: 1; height: 6px; background: var(–border); border-radius: 4px; overflow: hidden; }
+.water-bar { height: 100%; background: var(–accent3); border-radius: 4px; }
+.water-amt { font-family: ‘Bebas Neue’, sans-serif; font-size: 18px; color: var(–accent3); width: 60px; text-align: right; }
 
-  /* ── CALENDAR ── */
-  .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
-  .cal-day-label {
-    text-align: center;
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    color: var(--muted);
-    text-transform: uppercase;
-    padding: 4px 0 8px;
-  }
-  .cal-day {
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 6px 5px;
-    min-height: 86px;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    overflow: hidden;
-    position: relative;
-  }
-  .cal-day.empty { background: transparent; border-color: transparent; }
-  .cal-day-bg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.18;
-    border-radius: 7px;
-  }
-  body.light .cal-day-bg { opacity: 0.22; }
-  .cal-day-inner { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 3px; height: 100%; }
-  .cal-day.push { border-color: #ff6b3560; background: #ff6b3510; }
-  .cal-day.pull { border-color: #47c9ff60; background: #47c9ff10; }
-  .cal-day.legs { border-color: #a78bfa60; background: #a78bfa10; }
-  .cal-day.hiit { border-color: #e8ff4760; background: #e8ff4710; }
-  .cal-day.upper { border-color: #4ade8060; background: #4ade8010; }
-  .cal-day.active { border-color: #f9a84d60; background: #f9a84d10; }
-  .cal-day.rest { border-color: var(--border); background: rgba(128,128,128,0.04); }
-  .day-num { font-family: 'Bebas Neue', sans-serif; font-size: 20px; line-height: 1; color: var(--muted); }
-  .day-focus { font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; line-height: 1.3; }
-  .push .day-focus { color: var(--accent2); }
-  .pull .day-focus { color: var(--accent3); }
-  .legs .day-focus { color: #a78bfa; }
-  .hiit .day-focus { color: var(--accent); }
-  .upper .day-focus { color: var(--green); }
-  .active .day-focus { color: #f9a84d; }
-  .rest .day-focus { color: var(--muted); }
-  .day-core { font-size: 8px; color: var(--muted); margin-top: auto; font-family: 'DM Mono', monospace; }
-  .push .day-core, .pull .day-core, .legs .day-core, .hiit .day-core, .upper .day-core { color: var(--accent); }
+/* ── CALENDAR ── */
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+.cal-day-label {
+text-align: center;
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+color: var(–muted);
+text-transform: uppercase;
+padding: 4px 0 8px;
+}
+.cal-day {
+border: 1px solid var(–border);
+border-radius: 8px;
+padding: 6px 5px;
+min-height: 86px;
+display: flex;
+flex-direction: column;
+gap: 3px;
+overflow: hidden;
+position: relative;
+}
+.cal-day.empty { background: transparent; border-color: transparent; }
+.cal-day-bg {
+position: absolute;
+inset: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+opacity: 0.18;
+border-radius: 7px;
+}
+body.light .cal-day-bg { opacity: 0.22; }
+.cal-day-inner { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 3px; height: 100%; }
+.cal-day.push { border-color: #ff6b3560; background: #ff6b3510; }
+.cal-day.pull { border-color: #47c9ff60; background: #47c9ff10; }
+.cal-day.legs { border-color: #a78bfa60; background: #a78bfa10; }
+.cal-day.hiit { border-color: #e8ff4760; background: #e8ff4710; }
+.cal-day.upper { border-color: #4ade8060; background: #4ade8010; }
+.cal-day.active { border-color: #f9a84d60; background: #f9a84d10; }
+.cal-day.rest { border-color: var(–border); background: rgba(128,128,128,0.04); }
+.day-num { font-family: ‘Bebas Neue’, sans-serif; font-size: 20px; line-height: 1; color: var(–muted); }
+.day-focus { font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; line-height: 1.3; }
+.push .day-focus { color: var(–accent2); }
+.pull .day-focus { color: var(–accent3); }
+.legs .day-focus { color: #a78bfa; }
+.hiit .day-focus { color: var(–accent); }
+.upper .day-focus { color: var(–green); }
+.active .day-focus { color: #f9a84d; }
+.rest .day-focus { color: var(–muted); }
+.day-core { font-size: 8px; color: var(–muted); margin-top: auto; font-family: ‘DM Mono’, monospace; }
+.push .day-core, .pull .day-core, .legs .day-core, .hiit .day-core, .upper .day-core { color: var(–accent); }
 
-  /* ── RULES ── */
-  .rules-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin-bottom: 32px; }
-  .rule-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; display: flex; gap: 12px; align-items: flex-start; }
-  .rule-icon { font-size: 20px; flex-shrink: 0; }
-  .rule-title { font-weight: 600; font-size: 13px; margin-bottom: 4px; }
-  .rule-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+/* ── RULES ── */
+.rules-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin-bottom: 32px; }
+.rule-card { background: var(–card); border: 1px solid var(–border); border-radius: 10px; padding: 16px; display: flex; gap: 12px; align-items: flex-start; }
+.rule-icon { font-size: 20px; flex-shrink: 0; }
+.rule-title { font-weight: 600; font-size: 13px; margin-bottom: 4px; }
+.rule-desc { font-size: 12px; color: var(–muted); line-height: 1.5; }
 
-  /* ── PHASES ── */
-  .phases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
-  .phase {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px;
-    position: relative;
-    overflow: hidden;
-  }
-  .phase-img {
-    position: absolute;
-    inset: 0; width: 100%; height: 100%;
-    object-fit: cover;
-    opacity: 0.1;
-  }
-  body.light .phase-img { opacity: 0.14; }
-  .phase-content { position: relative; z-index: 1; }
-  .phase::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; z-index: 2; }
-  .phase-1::before { background: var(--accent3); }
-  .phase-2::before { background: var(--accent); }
-  .phase-3::before { background: var(--accent2); }
-  .phase-num { font-family: 'Bebas Neue', sans-serif; font-size: 48px; line-height: 1; color: var(--border); margin-bottom: 4px; }
-  .phase-month { font-family: 'Bebas Neue', sans-serif; font-size: 22px; margin-bottom: 8px; }
-  .phase-1 .phase-month { color: var(--accent3); }
-  .phase-2 .phase-month { color: var(--accent); }
-  .phase-3 .phase-month { color: var(--accent2); }
-  .phase-focus { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
-  .phase-target { background: rgba(128,128,128,0.1); border-radius: 6px; padding: 8px 12px; font-family: 'DM Mono', monospace; font-size: 12px; }
-  .phase-target span { color: var(--green); font-weight: 600; }
+/* ── PHASES ── */
+.phases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
+.phase {
+background: var(–card);
+border: 1px solid var(–border);
+border-radius: 12px;
+padding: 20px;
+position: relative;
+overflow: hidden;
+}
+.phase-img {
+position: absolute;
+inset: 0; width: 100%; height: 100%;
+object-fit: cover;
+opacity: 0.1;
+}
+body.light .phase-img { opacity: 0.14; }
+.phase-content { position: relative; z-index: 1; }
+.phase::before { content: ‘’; position: absolute; top: 0; left: 0; right: 0; height: 3px; z-index: 2; }
+.phase-1::before { background: var(–accent3); }
+.phase-2::before { background: var(–accent); }
+.phase-3::before { background: var(–accent2); }
+.phase-num { font-family: ‘Bebas Neue’, sans-serif; font-size: 48px; line-height: 1; color: var(–border); margin-bottom: 4px; }
+.phase-month { font-family: ‘Bebas Neue’, sans-serif; font-size: 22px; margin-bottom: 8px; }
+.phase-1 .phase-month { color: var(–accent3); }
+.phase-2 .phase-month { color: var(–accent); }
+.phase-3 .phase-month { color: var(–accent2); }
+.phase-focus { font-size: 12px; color: var(–muted); margin-bottom: 12px; }
+.phase-target { background: rgba(128,128,128,0.1); border-radius: 6px; padding: 8px 12px; font-family: ‘DM Mono’, monospace; font-size: 12px; }
+.phase-target span { color: var(–green); font-weight: 600; }
 
-  /* ── LEGEND ── */
-  .legend { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
-  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--muted); }
-  .legend-dot { width: 10px; height: 10px; border-radius: 2px; }
+/* ── LEGEND ── */
+.legend { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+.legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(–muted); }
+.legend-dot { width: 10px; height: 10px; border-radius: 2px; }
 
-  /* ── FOOTER ── */
-  .footer { text-align: center; padding: 32px; border-top: 1px solid var(--border); color: var(--muted); font-size: 12px; font-family: 'DM Mono', monospace; }
+/* ── FOOTER ── */
+.footer { text-align: center; padding: 32px; border-top: 1px solid var(–border); color: var(–muted); font-size: 12px; font-family: ‘DM Mono’, monospace; }
 
-  /* ── FLOATING BUTTONS ── */
-  .fab-group {
-    position: fixed;
-    bottom: 24px; right: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    z-index: 200;
-  }
-  .fab {
-    border: none;
-    border-radius: 50px;
-    padding: 12px 20px;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 16px;
-    letter-spacing: 0.05em;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    white-space: nowrap;
-  }
-  .fab:hover { transform: translateY(-2px); }
-  .fab-print {
-    background: var(--accent);
-    color: #000;
-    box-shadow: 0 4px 20px rgba(232,255,71,0.3);
-  }
-  .fab-theme {
-    background: var(--card);
-    color: var(--text);
-    border: 1px solid var(--border);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-  }
+/* ── FLOATING BUTTONS ── */
+.fab-group {
+position: fixed;
+bottom: 24px; right: 24px;
+display: flex;
+flex-direction: column;
+gap: 10px;
+z-index: 200;
+}
+.fab {
+border: none;
+border-radius: 50px;
+padding: 12px 20px;
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 16px;
+letter-spacing: 0.05em;
+cursor: pointer;
+transition: transform 0.2s, box-shadow 0.2s;
+white-space: nowrap;
+}
+.fab:hover { transform: translateY(-2px); }
+.fab-print {
+background: var(–accent);
+color: #000;
+box-shadow: 0 4px 20px rgba(232,255,71,0.3);
+}
+.fab-theme {
+background: var(–card);
+color: var(–text);
+border: 1px solid var(–border);
+box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
 
-  section { margin-bottom: 48px; }
+section { margin-bottom: 48px; }
 
-  @media (max-width: 600px) {
-    .phases { grid-template-columns: 1fr; }
-    .meal-grid { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 52px; }
-    .cal-day { min-height: 64px; }
-    .day-focus { font-size: 7px; }
-    .workout-banner { min-height: 110px; }
-  }
+@media (max-width: 600px) {
+.phases { grid-template-columns: 1fr; }
+.meal-grid { grid-template-columns: 1fr; }
+.hero h1 { font-size: 52px; }
+.cal-day { min-height: 64px; }
+.day-focus { font-size: 7px; }
+.workout-banner { min-height: 110px; }
+}
 </style>
+
 </head>
 <body>
 
@@ -466,6 +468,7 @@
 </div>
 
 <!-- HERO -->
+
 <div class="hero">
   <div class="hero-overlay"></div>
   <div class="hero-content">
@@ -484,190 +487,199 @@
 <div class="container">
 
   <!-- PHASE TIMELINE -->
+
   <section>
     <div class="section-title"><span class="icon">🗺️</span> 3-Month Roadmap <div class="line"></div></div>
     <div class="phases">
       <div class="phase phase-1">
-        
-        <div class="phase-content">
-        <div class="phase-num">01</div>
-        <div class="phase-month">JUNE — Foundation</div>
-        <div class="phase-focus">Build the habit. Lock in form. Enter consistent calorie deficit.</div>
-        <div class="phase-target">Target: <span>−2.5 kg</span></div>
-        </div>
-      </div>
-      <div class="phase phase-2">
-        
-        <div class="phase-content">
-        <div class="phase-num">02</div>
-        <div class="phase-month">JULY — Intensity</div>
-        <div class="phase-focus">Progressive overload. HIIT 2×/week. Core strength increasing.</div>
-        <div class="phase-target">Target: <span>−2 kg</span></div>
-        </div>
-      </div>
-      <div class="phase phase-3">
-        
-        <div class="phase-content">
-        <div class="phase-num">03</div>
-        <div class="phase-month">AUG — Shred</div>
-        <div class="phase-focus">Carb cycling. HIIT 3×/week. Abs start becoming visible.</div>
-        <div class="phase-target">Target: <span>−1.5 kg + visible abs</span></div>
-        </div>
-      </div>
+
+```
+    <div class="phase-content">
+    <div class="phase-num">01</div>
+    <div class="phase-month">JUNE — Foundation</div>
+    <div class="phase-focus">Build the habit. Lock in form. Enter consistent calorie deficit.</div>
+    <div class="phase-target">Target: <span>−2.5 kg</span></div>
     </div>
+  </div>
+  <div class="phase phase-2">
+    
+    <div class="phase-content">
+    <div class="phase-num">02</div>
+    <div class="phase-month">JULY — Intensity</div>
+    <div class="phase-focus">Progressive overload. HIIT 2×/week. Core strength increasing.</div>
+    <div class="phase-target">Target: <span>−2 kg</span></div>
+    </div>
+  </div>
+  <div class="phase phase-3">
+    
+    <div class="phase-content">
+    <div class="phase-num">03</div>
+    <div class="phase-month">AUG — Shred</div>
+    <div class="phase-focus">Carb cycling. HIIT 3×/week. Abs start becoming visible.</div>
+    <div class="phase-target">Target: <span>−1.5 kg + visible abs</span></div>
+    </div>
+  </div>
+</div>
+```
+
   </section>
 
   <!-- MEAL PLAN -->
+
   <section>
     <div class="section-title"><span class="icon">🍽️</span> Daily Meal Plan <div class="line"></div></div>
 
-    <div class="meal-grid">
-      <!-- Pre-workout -->
-      <div class="meal-card">
-        <div class="meal-img-grad" style="background:linear-gradient(135deg,#f6a623,#e8623a);display:flex;align-items:center;justify-content:center;gap:10px;"><span style="font-size:28px;">🍌</span><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:rgba(255,255,255,0.9);letter-spacing:0.1em;">PRE-WORKOUT</span></div>
-        <div class="meal-header">
-          <div>
-            <div class="meal-time">6:00 AM · Pre-Workout</div>
-            <div class="meal-name">Fuel Up</div>
-          </div>
-          <div class="meal-macros">
-            <div class="macro"><div class="macro-val cal">90</div><div class="macro-label">kcal</div></div>
-            <div class="macro"><div class="macro-val pro">1g</div><div class="macro-label">protein</div></div>
-          </div>
-        </div>
-        <div class="meal-body">
-          <ul class="meal-items">
-            <li>1 banana (medium)</li>
-            <li>Black coffee — no sugar, no milk</li>
-          </ul>
-        </div>
+```
+<div class="meal-grid">
+  <!-- Pre-workout -->
+  <div class="meal-card">
+    <div class="meal-img-grad" style="background:linear-gradient(135deg,#f6a623,#e8623a);display:flex;align-items:center;justify-content:center;gap:10px;"><span style="font-size:28px;">🍌</span><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:rgba(255,255,255,0.9);letter-spacing:0.1em;">PRE-WORKOUT</span></div>
+    <div class="meal-header">
+      <div>
+        <div class="meal-time">6:00 AM · Pre-Workout</div>
+        <div class="meal-name">Fuel Up</div>
       </div>
-
-      <!-- Breakfast -->
-      <div class="meal-card">
-        <div class="meal-img-grad" style="background:linear-gradient(135deg,#f7971e,#ffd200);display:flex;align-items:center;justify-content:center;gap:10px;"><span style="font-size:28px;">🥚</span><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:rgba(255,255,255,0.9);letter-spacing:0.1em;">BREAKFAST</span></div>
-        <div class="meal-header">
-          <div>
-            <div class="meal-time">8:00–8:30 AM · Post-Workout</div>
-            <div class="meal-name">Power Breakfast</div>
-          </div>
-          <div class="meal-macros">
-            <div class="macro"><div class="macro-val cal">460</div><div class="macro-label">kcal</div></div>
-            <div class="macro"><div class="macro-val pro">35g</div><div class="macro-label">protein</div></div>
-          </div>
-        </div>
-        <div class="meal-body">
-          <ul class="meal-items">
-            <li>3 whole eggs (scrambled or boiled)</li>
-            <li>2 slices whole wheat toast</li>
-            <li>1 cup low-fat Greek yogurt (unsweetened)</li>
-            <li>½ tsp ghee or olive oil for cooking</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Mid-morning -->
-      <div class="meal-card">
-        <div class="meal-img-grad" style="background:linear-gradient(135deg,#56ab2f,#a8e063);display:flex;align-items:center;justify-content:center;gap:10px;"><span style="font-size:28px;">💪</span><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:rgba(255,255,255,0.9);letter-spacing:0.1em;">MID-MORNING</span></div>
-        <div class="meal-header">
-          <div>
-            <div class="meal-time">11:00 AM · Mid-Morning</div>
-            <div class="meal-name">Protein Snack</div>
-          </div>
-          <div class="meal-macros">
-            <div class="macro"><div class="macro-val cal">225</div><div class="macro-label">kcal</div></div>
-            <div class="macro"><div class="macro-val pro">28g</div><div class="macro-label">protein</div></div>
-          </div>
-        </div>
-        <div class="meal-body">
-          <ul class="meal-items">
-            <li>1 scoop whey protein in water <em>OR</em> 100g paneer cubes</li>
-            <li>10–12 almonds</li>
-            <li>1 glass of water (300ml)</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Lunch -->
-      <div class="meal-card">
-        <div class="meal-img-grad" style="background:linear-gradient(135deg,#f46b45,#eea849);display:flex;align-items:center;justify-content:center;gap:10px;"><span style="font-size:28px;">🍛</span><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:rgba(255,255,255,0.9);letter-spacing:0.1em;">LUNCH</span></div>
-        <div class="meal-header">
-          <div>
-            <div class="meal-time">1:00–1:30 PM · Lunch</div>
-            <div class="meal-name">Biggest Meal 🔥</div>
-          </div>
-          <div class="meal-macros">
-            <div class="macro"><div class="macro-val cal">490</div><div class="macro-label">kcal</div></div>
-            <div class="macro"><div class="macro-val pro">26g</div><div class="macro-label">protein</div></div>
-          </div>
-        </div>
-        <div class="meal-body">
-          <ul class="meal-items">
-            <li>1 cup cooked dal (moong / chana / masoor)</li>
-            <li>¾ cup brown rice <em>OR</em> 1 whole wheat roti</li>
-            <li>1 cup sabzi (any veg, min oil)</li>
-            <li>Big salad: cucumber, tomato, onion + lemon</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Evening snack -->
-      <div class="meal-card">
-        <div class="meal-img-grad" style="background:linear-gradient(135deg,#4facfe,#00f2fe);display:flex;align-items:center;justify-content:center;gap:10px;"><span style="font-size:28px;">🥚</span><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:rgba(255,255,255,0.9);letter-spacing:0.1em;">SNACK</span></div>
-        <div class="meal-header">
-          <div>
-            <div class="meal-time">4:30–5:00 PM · Evening</div>
-            <div class="meal-name">Afternoon Boost</div>
-          </div>
-          <div class="meal-macros">
-            <div class="macro"><div class="macro-val cal">180</div><div class="macro-label">kcal</div></div>
-            <div class="macro"><div class="macro-val pro">14g</div><div class="macro-label">protein</div></div>
-          </div>
-        </div>
-        <div class="meal-body">
-          <ul class="meal-items">
-            <li>2 boiled eggs</li>
-            <li>1 apple <em>OR</em> cucumber sticks with hummus</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Dinner -->
-      <div class="meal-card">
-        <div class="meal-img-grad" style="background:linear-gradient(135deg,#a18cd1,#fbc2eb);display:flex;align-items:center;justify-content:center;gap:10px;"><span style="font-size:28px;">🍳</span><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:rgba(255,255,255,0.9);letter-spacing:0.1em;">DINNER</span></div>
-        <div class="meal-header">
-          <div>
-            <div class="meal-time">7:30–8:00 PM · Dinner</div>
-            <div class="meal-name">Light &amp; Protein-Rich</div>
-          </div>
-          <div class="meal-macros">
-            <div class="macro"><div class="macro-val cal">380</div><div class="macro-label">kcal</div></div>
-            <div class="macro"><div class="macro-val pro">32g</div><div class="macro-label">protein</div></div>
-          </div>
-        </div>
-        <div class="meal-body">
-          <ul class="meal-items">
-            <li>2-egg omelette with spinach / mushroom / onion</li>
-            <li>1 bowl vegetable soup <em>OR</em> green salad</li>
-            <li>100g paneer <em>OR</em> 1 cup curd (low-fat)</li>
-          </ul>
-        </div>
+      <div class="meal-macros">
+        <div class="macro"><div class="macro-val cal">90</div><div class="macro-label">kcal</div></div>
+        <div class="macro"><div class="macro-val pro">1g</div><div class="macro-label">protein</div></div>
       </div>
     </div>
+    <div class="meal-body">
+      <ul class="meal-items">
+        <li>1 banana (medium)</li>
+        <li>Black coffee — no sugar, no milk</li>
+      </ul>
+    </div>
+  </div>
 
-    <!-- Totals -->
-    <div class="totals-bar">
-      <div class="t-label">Daily Totals</div>
-      <div class="t-vals">
-        <div class="t-item"><div class="t-num">1,835</div><div class="t-sub">Calories</div></div>
-        <div class="t-item"><div class="t-num">132g</div><div class="t-sub">Protein</div></div>
-        <div class="t-item"><div class="t-num">~160g</div><div class="t-sub">Carbs</div></div>
-        <div class="t-item"><div class="t-num">~50g</div><div class="t-sub">Fats</div></div>
+  <!-- Breakfast -->
+  <div class="meal-card">
+    <div class="meal-img-grad" style="background:linear-gradient(135deg,#f7971e,#ffd200);display:flex;align-items:center;justify-content:center;gap:10px;"><span style="font-size:28px;">🥚</span><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:rgba(255,255,255,0.9);letter-spacing:0.1em;">BREAKFAST</span></div>
+    <div class="meal-header">
+      <div>
+        <div class="meal-time">8:00–8:30 AM · Post-Workout</div>
+        <div class="meal-name">Power Breakfast</div>
+      </div>
+      <div class="meal-macros">
+        <div class="macro"><div class="macro-val cal">460</div><div class="macro-label">kcal</div></div>
+        <div class="macro"><div class="macro-val pro">35g</div><div class="macro-label">protein</div></div>
       </div>
     </div>
+    <div class="meal-body">
+      <ul class="meal-items">
+        <li>3 whole eggs (scrambled or boiled)</li>
+        <li>2 slices whole wheat toast</li>
+        <li>1 cup low-fat Greek yogurt (unsweetened)</li>
+        <li>½ tsp ghee or olive oil for cooking</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Mid-morning -->
+  <div class="meal-card">
+    <div class="meal-img-grad" style="background:linear-gradient(135deg,#56ab2f,#a8e063);display:flex;align-items:center;justify-content:center;gap:10px;"><span style="font-size:28px;">💪</span><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:rgba(255,255,255,0.9);letter-spacing:0.1em;">MID-MORNING</span></div>
+    <div class="meal-header">
+      <div>
+        <div class="meal-time">11:00 AM · Mid-Morning</div>
+        <div class="meal-name">Protein Snack</div>
+      </div>
+      <div class="meal-macros">
+        <div class="macro"><div class="macro-val cal">225</div><div class="macro-label">kcal</div></div>
+        <div class="macro"><div class="macro-val pro">28g</div><div class="macro-label">protein</div></div>
+      </div>
+    </div>
+    <div class="meal-body">
+      <ul class="meal-items">
+        <li>1 scoop whey protein in water <em>OR</em> 100g paneer cubes</li>
+        <li>10–12 almonds</li>
+        <li>1 glass of water (300ml)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Lunch -->
+  <div class="meal-card">
+    <div class="meal-img-grad" style="background:linear-gradient(135deg,#f46b45,#eea849);display:flex;align-items:center;justify-content:center;gap:10px;"><span style="font-size:28px;">🍛</span><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:rgba(255,255,255,0.9);letter-spacing:0.1em;">LUNCH</span></div>
+    <div class="meal-header">
+      <div>
+        <div class="meal-time">1:00–1:30 PM · Lunch</div>
+        <div class="meal-name">Biggest Meal 🔥</div>
+      </div>
+      <div class="meal-macros">
+        <div class="macro"><div class="macro-val cal">490</div><div class="macro-label">kcal</div></div>
+        <div class="macro"><div class="macro-val pro">26g</div><div class="macro-label">protein</div></div>
+      </div>
+    </div>
+    <div class="meal-body">
+      <ul class="meal-items">
+        <li>1 cup cooked dal (moong / chana / masoor)</li>
+        <li>¾ cup brown rice <em>OR</em> 1 whole wheat roti</li>
+        <li>1 cup sabzi (any veg, min oil)</li>
+        <li>Big salad: cucumber, tomato, onion + lemon</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Evening snack -->
+  <div class="meal-card">
+    <div class="meal-img-grad" style="background:linear-gradient(135deg,#4facfe,#00f2fe);display:flex;align-items:center;justify-content:center;gap:10px;"><span style="font-size:28px;">🥚</span><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:rgba(255,255,255,0.9);letter-spacing:0.1em;">SNACK</span></div>
+    <div class="meal-header">
+      <div>
+        <div class="meal-time">4:30–5:00 PM · Evening</div>
+        <div class="meal-name">Afternoon Boost</div>
+      </div>
+      <div class="meal-macros">
+        <div class="macro"><div class="macro-val cal">180</div><div class="macro-label">kcal</div></div>
+        <div class="macro"><div class="macro-val pro">14g</div><div class="macro-label">protein</div></div>
+      </div>
+    </div>
+    <div class="meal-body">
+      <ul class="meal-items">
+        <li>2 boiled eggs</li>
+        <li>1 apple <em>OR</em> cucumber sticks with hummus</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Dinner -->
+  <div class="meal-card">
+    <div class="meal-img-grad" style="background:linear-gradient(135deg,#a18cd1,#fbc2eb);display:flex;align-items:center;justify-content:center;gap:10px;"><span style="font-size:28px;">🍳</span><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:rgba(255,255,255,0.9);letter-spacing:0.1em;">DINNER</span></div>
+    <div class="meal-header">
+      <div>
+        <div class="meal-time">7:30–8:00 PM · Dinner</div>
+        <div class="meal-name">Light &amp; Protein-Rich</div>
+      </div>
+      <div class="meal-macros">
+        <div class="macro"><div class="macro-val cal">380</div><div class="macro-label">kcal</div></div>
+        <div class="macro"><div class="macro-val pro">32g</div><div class="macro-label">protein</div></div>
+      </div>
+    </div>
+    <div class="meal-body">
+      <ul class="meal-items">
+        <li>2-egg omelette with spinach / mushroom / onion</li>
+        <li>1 bowl vegetable soup <em>OR</em> green salad</li>
+        <li>100g paneer <em>OR</em> 1 cup curd (low-fat)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Totals -->
+<div class="totals-bar">
+  <div class="t-label">Daily Totals</div>
+  <div class="t-vals">
+    <div class="t-item"><div class="t-num">1,835</div><div class="t-sub">Calories</div></div>
+    <div class="t-item"><div class="t-num">132g</div><div class="t-sub">Protein</div></div>
+    <div class="t-item"><div class="t-num">~160g</div><div class="t-sub">Carbs</div></div>
+    <div class="t-item"><div class="t-num">~50g</div><div class="t-sub">Fats</div></div>
+  </div>
+</div>
+```
+
   </section>
 
   <!-- WATER SCHEDULE -->
+
   <section>
     <div class="section-title"><span class="icon">💧</span> Daily Water Schedule <div class="line"></div></div>
     <div style="background: rgba(71,201,255,0.08); border: 1px solid rgba(71,201,255,0.25); border-radius:10px; padding: 12px 16px; font-size:12px; margin-bottom: 14px;">
@@ -726,126 +738,131 @@
   </section>
 
   <!-- JUNE CALENDAR -->
+
   <section class="page-break">
     <div class="section-title"><span class="icon">📅</span> June 2026 — Workout Calendar <div class="line"></div></div>
 
-    <!-- Workout Type Image Banners -->
-    <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap:10px; margin-bottom:20px;">
-      <div class="workout-banner">
-        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#ff6b35 0%,#c0392b 100%);opacity:0.9;"></div>
-        <div class="workout-banner-overlay"></div>
-        <div class="workout-banner-content">
-          <div class="workout-banner-title">PUSH</div>
-          <div class="workout-banner-sub">Chest · Shoulders · Triceps</div>
-        </div>
-        <div class="workout-banner-badge" style="background:#ff6b35;">MON</div>
-      </div>
-      <div class="workout-banner">
-        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#47c9ff 0%,#0e5a8a 100%);opacity:0.9;"></div>
-        <div class="workout-banner-overlay"></div>
-        <div class="workout-banner-content">
-          <div class="workout-banner-title">PULL</div>
-          <div class="workout-banner-sub">Back · Biceps · Rows</div>
-        </div>
-        <div class="workout-banner-badge" style="background:#47c9ff; color:#000;">TUE</div>
-      </div>
-      <div class="workout-banner">
-        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#a78bfa 0%,#5b21b6 100%);opacity:0.9;"></div>
-        <div class="workout-banner-overlay"></div>
-        <div class="workout-banner-content">
-          <div class="workout-banner-title">LEGS</div>
-          <div class="workout-banner-sub">Quads · Glutes · Hamstrings</div>
-        </div>
-        <div class="workout-banner-badge" style="background:#a78bfa;">WED</div>
-      </div>
-      <div class="workout-banner">
-        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#e8ff47 0%,#9ca300 100%);opacity:0.9;"></div>
-        <div class="workout-banner-overlay"></div>
-        <div class="workout-banner-content">
-          <div class="workout-banner-title">HIIT</div>
-          <div class="workout-banner-sub">Cardio · Burn · Interval</div>
-        </div>
-        <div class="workout-banner-badge">THU</div>
-      </div>
-      <div class="workout-banner">
-        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#4ade80 0%,#15803d 100%);opacity:0.9;"></div>
-        <div class="workout-banner-overlay"></div>
-        <div class="workout-banner-content">
-          <div class="workout-banner-title">ABS CORE</div>
-          <div class="workout-banner-sub">Every session · 15–18 min</div>
-        </div>
-        <div class="workout-banner-badge" style="background:#4ade80; color:#000;">DAILY</div>
-      </div>
+```
+<!-- Workout Type Image Banners -->
+<div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap:10px; margin-bottom:20px;">
+  <div class="workout-banner">
+    <div style="position:absolute;inset:0;background:linear-gradient(135deg,#ff6b35 0%,#c0392b 100%);opacity:0.9;"></div>
+    <div class="workout-banner-overlay"></div>
+    <div class="workout-banner-content">
+      <div class="workout-banner-title">PUSH</div>
+      <div class="workout-banner-sub">Chest · Shoulders · Triceps</div>
     </div>
-
-    <div class="legend">
-      <div class="legend-item"><div class="legend-dot" style="background:#ff6b35;"></div> Push (Chest/Shoulders/Triceps)</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#47c9ff;"></div> Pull (Back/Biceps)</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#a78bfa;"></div> Legs + Glutes</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#e8ff47;"></div> HIIT Cardio</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#4ade80;"></div> Full Upper Body</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#f9a84d;"></div> Active Recovery</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#2a2a2a;"></div> Rest</div>
+    <div class="workout-banner-badge" style="background:#ff6b35;">MON</div>
+  </div>
+  <div class="workout-banner">
+    <div style="position:absolute;inset:0;background:linear-gradient(135deg,#47c9ff 0%,#0e5a8a 100%);opacity:0.9;"></div>
+    <div class="workout-banner-overlay"></div>
+    <div class="workout-banner-content">
+      <div class="workout-banner-title">PULL</div>
+      <div class="workout-banner-sub">Back · Biceps · Rows</div>
     </div>
-
-    <div class="cal-grid">
-      <!-- Day labels -->
-      <div class="cal-day-label">SUN</div>
-      <div class="cal-day-label">MON</div>
-      <div class="cal-day-label">TUE</div>
-      <div class="cal-day-label">WED</div>
-      <div class="cal-day-label">THU</div>
-      <div class="cal-day-label">FRI</div>
-      <div class="cal-day-label">SAT</div>
-
-      <!-- Week 1: June 2026 starts on MONDAY -->
-      <div class="cal-day empty"></div>
-      <div class="cal-day push"><div class="day-num">1</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day pull"><div class="day-num">2</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day legs"><div class="day-num">3</div><div class="day-focus">Legs</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day hiit"><div class="day-num">4</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day upper"><div class="day-num">5</div><div class="day-focus">Full Upper</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day active"><div class="day-num">6</div><div class="day-focus">Walk / Yoga</div></div>
-
-      <!-- Week 2 -->
-      <div class="cal-day rest"><div class="day-num">7</div><div class="day-focus">Rest</div></div>
-      <div class="cal-day push"><div class="day-num">8</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day pull"><div class="day-num">9</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day legs"><div class="day-num">10</div><div class="day-focus">Legs</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day hiit"><div class="day-num">11</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day upper"><div class="day-num">12</div><div class="day-focus">Full Upper</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day active"><div class="day-num">13</div><div class="day-focus">Walk / Yoga</div></div>
-
-      <!-- Week 3 -->
-      <div class="cal-day rest"><div class="day-num">14</div><div class="day-focus">Rest</div></div>
-      <div class="cal-day push"><div class="day-num">15</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day pull"><div class="day-num">16</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day legs"><div class="day-num">17</div><div class="day-focus">Legs</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day hiit"><div class="day-num">18</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day upper"><div class="day-num">19</div><div class="day-focus">Full Upper</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day active"><div class="day-num">20</div><div class="day-focus">Walk / Yoga</div></div>
-
-      <!-- Week 4 -->
-      <div class="cal-day rest"><div class="day-num">21</div><div class="day-focus">Rest</div></div>
-      <div class="cal-day push"><div class="day-num">22</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day pull"><div class="day-num">23</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day legs"><div class="day-num">24</div><div class="day-focus">Legs</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day hiit"><div class="day-num">25</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day upper"><div class="day-num">26</div><div class="day-focus">Full Upper</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day active"><div class="day-num">27</div><div class="day-focus">Walk / Yoga</div></div>
-
-      <!-- Week 5 -->
-      <div class="cal-day rest"><div class="day-num">28</div><div class="day-focus">Rest</div></div>
-      <div class="cal-day push"><div class="day-num">29</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day pull"><div class="day-num">30</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day empty"></div>
-      <div class="cal-day empty"></div>
-      <div class="cal-day empty"></div>
-      <div class="cal-day empty"></div>
+    <div class="workout-banner-badge" style="background:#47c9ff; color:#000;">TUE</div>
+  </div>
+  <div class="workout-banner">
+    <div style="position:absolute;inset:0;background:linear-gradient(135deg,#a78bfa 0%,#5b21b6 100%);opacity:0.9;"></div>
+    <div class="workout-banner-overlay"></div>
+    <div class="workout-banner-content">
+      <div class="workout-banner-title">LEGS</div>
+      <div class="workout-banner-sub">Quads · Glutes · Hamstrings</div>
     </div>
+    <div class="workout-banner-badge" style="background:#a78bfa;">WED</div>
+  </div>
+  <div class="workout-banner">
+    <div style="position:absolute;inset:0;background:linear-gradient(135deg,#e8ff47 0%,#9ca300 100%);opacity:0.9;"></div>
+    <div class="workout-banner-overlay"></div>
+    <div class="workout-banner-content">
+      <div class="workout-banner-title">HIIT</div>
+      <div class="workout-banner-sub">Cardio · Burn · Interval</div>
+    </div>
+    <div class="workout-banner-badge">THU</div>
+  </div>
+  <div class="workout-banner">
+    <div style="position:absolute;inset:0;background:linear-gradient(135deg,#4ade80 0%,#15803d 100%);opacity:0.9;"></div>
+    <div class="workout-banner-overlay"></div>
+    <div class="workout-banner-content">
+      <div class="workout-banner-title">ABS CORE</div>
+      <div class="workout-banner-sub">Every session · 15–18 min</div>
+    </div>
+    <div class="workout-banner-badge" style="background:#4ade80; color:#000;">DAILY</div>
+  </div>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#ff6b35;"></div> Push (Chest/Shoulders/Triceps)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#47c9ff;"></div> Pull (Back/Biceps)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#a78bfa;"></div> Legs + Glutes</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#e8ff47;"></div> HIIT Cardio</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#4ade80;"></div> Full Upper Body</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#f9a84d;"></div> Active Recovery</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#2a2a2a;"></div> Rest</div>
+</div>
+
+<div class="cal-grid">
+  <!-- Day labels -->
+  <div class="cal-day-label">SUN</div>
+  <div class="cal-day-label">MON</div>
+  <div class="cal-day-label">TUE</div>
+  <div class="cal-day-label">WED</div>
+  <div class="cal-day-label">THU</div>
+  <div class="cal-day-label">FRI</div>
+  <div class="cal-day-label">SAT</div>
+
+  <!-- Week 1: June 2026 starts on MONDAY -->
+  <div class="cal-day empty"></div>
+  <div class="cal-day push"><div class="day-num">1</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day pull"><div class="day-num">2</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day legs"><div class="day-num">3</div><div class="day-focus">Legs</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day hiit"><div class="day-num">4</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day upper"><div class="day-num">5</div><div class="day-focus">Full Upper</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day active"><div class="day-num">6</div><div class="day-focus">Walk / Yoga</div></div>
+
+  <!-- Week 2 -->
+  <div class="cal-day rest"><div class="day-num">7</div><div class="day-focus">Rest</div></div>
+  <div class="cal-day push"><div class="day-num">8</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day pull"><div class="day-num">9</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day legs"><div class="day-num">10</div><div class="day-focus">Legs</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day hiit"><div class="day-num">11</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day upper"><div class="day-num">12</div><div class="day-focus">Full Upper</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day active"><div class="day-num">13</div><div class="day-focus">Walk / Yoga</div></div>
+
+  <!-- Week 3 -->
+  <div class="cal-day rest"><div class="day-num">14</div><div class="day-focus">Rest</div></div>
+  <div class="cal-day push"><div class="day-num">15</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day pull"><div class="day-num">16</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day legs"><div class="day-num">17</div><div class="day-focus">Legs</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day hiit"><div class="day-num">18</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day upper"><div class="day-num">19</div><div class="day-focus">Full Upper</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day active"><div class="day-num">20</div><div class="day-focus">Walk / Yoga</div></div>
+
+  <!-- Week 4 -->
+  <div class="cal-day rest"><div class="day-num">21</div><div class="day-focus">Rest</div></div>
+  <div class="cal-day push"><div class="day-num">22</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day pull"><div class="day-num">23</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day legs"><div class="day-num">24</div><div class="day-focus">Legs</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day hiit"><div class="day-num">25</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day upper"><div class="day-num">26</div><div class="day-focus">Full Upper</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day active"><div class="day-num">27</div><div class="day-focus">Walk / Yoga</div></div>
+
+  <!-- Week 5 -->
+  <div class="cal-day rest"><div class="day-num">28</div><div class="day-focus">Rest</div></div>
+  <div class="cal-day push"><div class="day-num">29</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day pull"><div class="day-num">30</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day empty"></div>
+  <div class="cal-day empty"></div>
+  <div class="cal-day empty"></div>
+  <div class="cal-day empty"></div>
+</div>
+```
+
   </section>
 
   <!-- JULY CALENDAR -->
+
   <section class="page-break">
     <div class="section-title"><span class="icon">📅</span> July 2026 — Workout Calendar <div class="line"></div></div>
     <div style="background: rgba(232,255,71,0.06); border:1px solid rgba(232,255,71,0.2); border-radius:10px; padding:12px 16px; font-size:12px; margin-bottom:16px;">
@@ -869,54 +886,58 @@
       <div class="cal-day-label">FRI</div>
       <div class="cal-day-label">SAT</div>
 
-      <!-- July 2026 starts on WEDNESDAY -->
-      <div class="cal-day empty"></div>
-      <div class="cal-day empty"></div>
-      <div class="cal-day empty"></div>
-      <div class="cal-day push"><div class="day-num">1</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day hiit"><div class="day-num">2</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day upper"><div class="day-num">3</div><div class="day-focus">Full Upper</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day active"><div class="day-num">4</div><div class="day-focus">Walk / Yoga</div></div>
+```
+  <!-- July 2026 starts on WEDNESDAY -->
+  <div class="cal-day empty"></div>
+  <div class="cal-day empty"></div>
+  <div class="cal-day empty"></div>
+  <div class="cal-day push"><div class="day-num">1</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day hiit"><div class="day-num">2</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day upper"><div class="day-num">3</div><div class="day-focus">Full Upper</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day active"><div class="day-num">4</div><div class="day-focus">Walk / Yoga</div></div>
 
-      <!-- Week 2 -->
-      <div class="cal-day rest"><div class="day-num">5</div><div class="day-focus">Rest</div></div>
-      <div class="cal-day pull"><div class="day-num">6</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day legs"><div class="day-num">7</div><div class="day-focus">Legs</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day push"><div class="day-num">8</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day hiit"><div class="day-num">9</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day upper"><div class="day-num">10</div><div class="day-focus">Full Upper</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day active"><div class="day-num">11</div><div class="day-focus">Walk / Yoga</div></div>
+  <!-- Week 2 -->
+  <div class="cal-day rest"><div class="day-num">5</div><div class="day-focus">Rest</div></div>
+  <div class="cal-day pull"><div class="day-num">6</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day legs"><div class="day-num">7</div><div class="day-focus">Legs</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day push"><div class="day-num">8</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day hiit"><div class="day-num">9</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day upper"><div class="day-num">10</div><div class="day-focus">Full Upper</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day active"><div class="day-num">11</div><div class="day-focus">Walk / Yoga</div></div>
 
-      <!-- Week 3 -->
-      <div class="cal-day rest"><div class="day-num">12</div><div class="day-focus">Rest</div></div>
-      <div class="cal-day pull"><div class="day-num">13</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day legs"><div class="day-num">14</div><div class="day-focus">Legs</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day push"><div class="day-num">15</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day hiit"><div class="day-num">16</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day upper"><div class="day-num">17</div><div class="day-focus">Full Upper</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day active"><div class="day-num">18</div><div class="day-focus">Walk / Yoga</div></div>
+  <!-- Week 3 -->
+  <div class="cal-day rest"><div class="day-num">12</div><div class="day-focus">Rest</div></div>
+  <div class="cal-day pull"><div class="day-num">13</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day legs"><div class="day-num">14</div><div class="day-focus">Legs</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day push"><div class="day-num">15</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day hiit"><div class="day-num">16</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day upper"><div class="day-num">17</div><div class="day-focus">Full Upper</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day active"><div class="day-num">18</div><div class="day-focus">Walk / Yoga</div></div>
 
-      <!-- Week 4 -->
-      <div class="cal-day rest"><div class="day-num">19</div><div class="day-focus">Rest</div></div>
-      <div class="cal-day pull"><div class="day-num">20</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day legs"><div class="day-num">21</div><div class="day-focus">Legs</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day push"><div class="day-num">22</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day hiit"><div class="day-num">23</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day upper"><div class="day-num">24</div><div class="day-focus">Full Upper</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day active"><div class="day-num">25</div><div class="day-focus">Walk / Yoga</div></div>
+  <!-- Week 4 -->
+  <div class="cal-day rest"><div class="day-num">19</div><div class="day-focus">Rest</div></div>
+  <div class="cal-day pull"><div class="day-num">20</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day legs"><div class="day-num">21</div><div class="day-focus">Legs</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day push"><div class="day-num">22</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day hiit"><div class="day-num">23</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day upper"><div class="day-num">24</div><div class="day-focus">Full Upper</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day active"><div class="day-num">25</div><div class="day-focus">Walk / Yoga</div></div>
 
-      <!-- Week 5 -->
-      <div class="cal-day rest"><div class="day-num">26</div><div class="day-focus">Rest</div></div>
-      <div class="cal-day pull"><div class="day-num">27</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day legs"><div class="day-num">28</div><div class="day-focus">Legs</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day push"><div class="day-num">29</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day hiit"><div class="day-num">30</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day upper"><div class="day-num">31</div><div class="day-focus">Full Upper</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day empty"></div>
-    </div>
+  <!-- Week 5 -->
+  <div class="cal-day rest"><div class="day-num">26</div><div class="day-focus">Rest</div></div>
+  <div class="cal-day pull"><div class="day-num">27</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day legs"><div class="day-num">28</div><div class="day-focus">Legs</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day push"><div class="day-num">29</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day hiit"><div class="day-num">30</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day upper"><div class="day-num">31</div><div class="day-focus">Full Upper</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day empty"></div>
+</div>
+```
+
   </section>
 
   <!-- AUGUST CALENDAR -->
+
   <section class="page-break">
     <div class="section-title"><span class="icon">📅</span> August 2026 — Workout Calendar <div class="line"></div></div>
     <div style="background: rgba(255,107,53,0.06); border:1px solid rgba(255,107,53,0.25); border-radius:10px; padding:12px 16px; font-size:12px; margin-bottom:16px;">
@@ -940,66 +961,70 @@
       <div class="cal-day-label">FRI</div>
       <div class="cal-day-label">SAT</div>
 
-      <!-- August 2026 starts on SATURDAY -->
-      <div class="cal-day empty"></div>
-      <div class="cal-day empty"></div>
-      <div class="cal-day empty"></div>
-      <div class="cal-day empty"></div>
-      <div class="cal-day empty"></div>
-      <div class="cal-day empty"></div>
-      <div class="cal-day active"><div class="day-num">1</div><div class="day-focus">Walk / Yoga</div></div>
+```
+  <!-- August 2026 starts on SATURDAY -->
+  <div class="cal-day empty"></div>
+  <div class="cal-day empty"></div>
+  <div class="cal-day empty"></div>
+  <div class="cal-day empty"></div>
+  <div class="cal-day empty"></div>
+  <div class="cal-day empty"></div>
+  <div class="cal-day active"><div class="day-num">1</div><div class="day-focus">Walk / Yoga</div></div>
 
-      <!-- Week 2 -->
-      <div class="cal-day rest"><div class="day-num">2</div><div class="day-focus">Rest</div></div>
-      <div class="cal-day push"><div class="day-num">3</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day hiit"><div class="day-num">4</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day legs"><div class="day-num">5</div><div class="day-focus">Legs</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day pull"><div class="day-num">6</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day hiit"><div class="day-num">7</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day upper"><div class="day-num">8</div><div class="day-focus">Full Upper</div><div class="day-core">+ Core</div></div>
+  <!-- Week 2 -->
+  <div class="cal-day rest"><div class="day-num">2</div><div class="day-focus">Rest</div></div>
+  <div class="cal-day push"><div class="day-num">3</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day hiit"><div class="day-num">4</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day legs"><div class="day-num">5</div><div class="day-focus">Legs</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day pull"><div class="day-num">6</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day hiit"><div class="day-num">7</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day upper"><div class="day-num">8</div><div class="day-focus">Full Upper</div><div class="day-core">+ Core</div></div>
 
-      <!-- Week 3 -->
-      <div class="cal-day active"><div class="day-num">9</div><div class="day-focus">Walk / Yoga</div></div>
-      <div class="cal-day rest"><div class="day-num">10</div><div class="day-focus">Rest</div></div>
-      <div class="cal-day push"><div class="day-num">11</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day hiit"><div class="day-num">12</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day legs"><div class="day-num">13</div><div class="day-focus">Legs</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day pull"><div class="day-num">14</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day hiit"><div class="day-num">15</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
+  <!-- Week 3 -->
+  <div class="cal-day active"><div class="day-num">9</div><div class="day-focus">Walk / Yoga</div></div>
+  <div class="cal-day rest"><div class="day-num">10</div><div class="day-focus">Rest</div></div>
+  <div class="cal-day push"><div class="day-num">11</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day hiit"><div class="day-num">12</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day legs"><div class="day-num">13</div><div class="day-focus">Legs</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day pull"><div class="day-num">14</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day hiit"><div class="day-num">15</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
 
-      <!-- Week 4 -->
-      <div class="cal-day upper"><div class="day-num">16</div><div class="day-focus">Full Upper</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day active"><div class="day-num">17</div><div class="day-focus">Walk / Yoga</div></div>
-      <div class="cal-day rest"><div class="day-num">18</div><div class="day-focus">Rest</div></div>
-      <div class="cal-day push"><div class="day-num">19</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day hiit"><div class="day-num">20</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day legs"><div class="day-num">21</div><div class="day-focus">Legs</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day pull"><div class="day-num">22</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
+  <!-- Week 4 -->
+  <div class="cal-day upper"><div class="day-num">16</div><div class="day-focus">Full Upper</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day active"><div class="day-num">17</div><div class="day-focus">Walk / Yoga</div></div>
+  <div class="cal-day rest"><div class="day-num">18</div><div class="day-focus">Rest</div></div>
+  <div class="cal-day push"><div class="day-num">19</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day hiit"><div class="day-num">20</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day legs"><div class="day-num">21</div><div class="day-focus">Legs</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day pull"><div class="day-num">22</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
 
-      <!-- Week 5 -->
-      <div class="cal-day hiit"><div class="day-num">23</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day upper"><div class="day-num">24</div><div class="day-focus">Full Upper</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day active"><div class="day-num">25</div><div class="day-focus">Walk / Yoga</div></div>
-      <div class="cal-day rest"><div class="day-num">26</div><div class="day-focus">Rest</div></div>
-      <div class="cal-day push"><div class="day-num">27</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day hiit"><div class="day-num">28</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day legs"><div class="day-num">29</div><div class="day-focus">Legs</div><div class="day-core">+ Core</div></div>
+  <!-- Week 5 -->
+  <div class="cal-day hiit"><div class="day-num">23</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day upper"><div class="day-num">24</div><div class="day-focus">Full Upper</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day active"><div class="day-num">25</div><div class="day-focus">Walk / Yoga</div></div>
+  <div class="cal-day rest"><div class="day-num">26</div><div class="day-focus">Rest</div></div>
+  <div class="cal-day push"><div class="day-num">27</div><div class="day-focus">Push</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day hiit"><div class="day-num">28</div><div class="day-focus">HIIT Cardio</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day legs"><div class="day-num">29</div><div class="day-focus">Legs</div><div class="day-core">+ Core</div></div>
 
-      <!-- Week 6 -->
-      <div class="cal-day pull"><div class="day-num">30</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day upper"><div class="day-num">31</div><div class="day-focus">Full Upper 🏁</div><div class="day-core">+ Core</div></div>
-      <div class="cal-day empty"></div>
-      <div class="cal-day empty"></div>
-      <div class="cal-day empty"></div>
-      <div class="cal-day empty"></div>
-      <div class="cal-day empty"></div>
-    </div>
-    <div style="text-align:center; margin-top:16px; padding:16px; background:rgba(232,255,71,0.06); border:1px solid rgba(232,255,71,0.2); border-radius:10px;">
-      🏆 <strong style="color:var(--accent);">September 1, 2026 — Goal Complete!</strong> &nbsp;·&nbsp; Target: <strong style="color:var(--green);">74 kg · Visible Abs · 90 Days Strong</strong>
-    </div>
+  <!-- Week 6 -->
+  <div class="cal-day pull"><div class="day-num">30</div><div class="day-focus">Pull</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day upper"><div class="day-num">31</div><div class="day-focus">Full Upper 🏁</div><div class="day-core">+ Core</div></div>
+  <div class="cal-day empty"></div>
+  <div class="cal-day empty"></div>
+  <div class="cal-day empty"></div>
+  <div class="cal-day empty"></div>
+  <div class="cal-day empty"></div>
+</div>
+<div style="text-align:center; margin-top:16px; padding:16px; background:rgba(232,255,71,0.06); border:1px solid rgba(232,255,71,0.2); border-radius:10px;">
+  🏆 <strong style="color:var(--accent);">September 1, 2026 — Goal Complete!</strong> &nbsp;·&nbsp; Target: <strong style="color:var(--green);">74 kg · Visible Abs · 90 Days Strong</strong>
+</div>
+```
+
   </section>
 
   <!-- DAILY CORE ROUTINE -->
+
   <section>
     <div class="section-title"><span class="icon">🔥</span> Daily Core Routine (15–18 min) <div class="line"></div></div>
     <div class="card">
@@ -1056,6 +1081,7 @@
   </section>
 
   <!-- DESK JOB RULES -->
+
   <section>
     <div class="section-title"><span class="icon">⚠️</span> Non-Negotiable Rules for a Desk Job Body <div class="line"></div></div>
     <div class="rules-grid">
@@ -1102,6 +1128,420 @@
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- SALAD RECIPES -->
+
+  <section>
+    <div class="section-title"><span class="icon">🥗</span> Salad Recipes — Cucumber · Tomato · Paneer <div class="line"></div></div>
+    <div style="font-size:13px; color:var(--muted); margin-bottom:20px;">Every recipe uses cucumber, tomato & paneer as the base. Rotate daily to avoid boredom.</div>
+
+```
+<div class="meal-grid">
+
+  <!-- Salad 1 -->
+  <div class="meal-card">
+    <div class="meal-img-grad" style="background:linear-gradient(135deg,#56ab2f,#a8e063);display:flex;align-items:center;justify-content:center;gap:10px;">
+      <span style="font-size:28px;">🥗</span>
+      <span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:rgba(255,255,255,0.95);letter-spacing:0.1em;">CLASSIC</span>
+    </div>
+    <div class="meal-header">
+      <div>
+        <div class="meal-time">5 min · No cooking</div>
+        <div class="meal-name">Classic Cucumber Tomato Paneer</div>
+      </div>
+      <div class="meal-macros">
+        <div class="macro"><div class="macro-val cal">~180</div><div class="macro-label">kcal</div></div>
+        <div class="macro"><div class="macro-val pro">14g</div><div class="macro-label">protein</div></div>
+      </div>
+    </div>
+    <div class="meal-body">
+      <ul class="meal-items">
+        <li>1 cucumber diced + 2 tomatoes chopped</li>
+        <li>100g paneer cubed</li>
+        <li>½ red onion + fresh coriander</li>
+        <li>1 tbsp lemon juice + ½ tsp chaat masala + black salt</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Salad 2 -->
+  <div class="meal-card">
+    <div class="meal-img-grad" style="background:linear-gradient(135deg,#f7971e,#ffd200);display:flex;align-items:center;justify-content:center;gap:10px;">
+      <span style="font-size:28px;">💪</span>
+      <span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:rgba(0,0,0,0.8);letter-spacing:0.1em;">POWER BOWL</span>
+    </div>
+    <div class="meal-header">
+      <div>
+        <div class="meal-time">10 min · ~30g protein</div>
+        <div class="meal-name">Chana Paneer Power Salad</div>
+      </div>
+      <div class="meal-macros">
+        <div class="macro"><div class="macro-val cal">~320</div><div class="macro-label">kcal</div></div>
+        <div class="macro"><div class="macro-val pro">30g</div><div class="macro-label">protein</div></div>
+      </div>
+    </div>
+    <div class="meal-body">
+      <ul class="meal-items">
+        <li>1 cucumber + 2 tomatoes + 1 capsicum</li>
+        <li>100g grilled paneer + 150g boiled chickpeas</li>
+        <li>Dressing: lemon + olive oil + cumin + chaat masala</li>
+        <li>Garnish: fresh mint leaves</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Salad 3 -->
+  <div class="meal-card">
+    <div class="meal-img-grad" style="background:linear-gradient(135deg,#4facfe,#00f2fe);display:flex;align-items:center;justify-content:center;gap:10px;">
+      <span style="font-size:28px;">🌍</span>
+      <span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:rgba(255,255,255,0.95);letter-spacing:0.1em;">MEDITERRANEAN</span>
+    </div>
+    <div class="meal-header">
+      <div>
+        <div class="meal-time">10 min · Tangy dressing</div>
+        <div class="meal-name">Mediterranean with Mustard-Lemon</div>
+      </div>
+      <div class="meal-macros">
+        <div class="macro"><div class="macro-val cal">~260</div><div class="macro-label">kcal</div></div>
+        <div class="macro"><div class="macro-val pro">18g</div><div class="macro-label">protein</div></div>
+      </div>
+    </div>
+    <div class="meal-body">
+      <ul class="meal-items">
+        <li>1 cucumber + 2 tomatoes + baby spinach</li>
+        <li>100g paneer crumbled + sweet corn + black olives</li>
+        <li>Dressing: lemon + Dijon mustard + olive oil + honey</li>
+        <li>Top: mixed seeds (sunflower, pumpkin)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Salad 4 -->
+  <div class="meal-card">
+    <div class="meal-img-grad" style="background:linear-gradient(135deg,#f46b45,#ee4540);display:flex;align-items:center;justify-content:center;gap:10px;">
+      <span style="font-size:28px;">🌶️</span>
+      <span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:rgba(255,255,255,0.95);letter-spacing:0.1em;">DESI CHAAT</span>
+    </div>
+    <div class="meal-header">
+      <div>
+        <div class="meal-time">8 min · Street-food style</div>
+        <div class="meal-name">Desi Spicy Chaat-Style Paneer</div>
+      </div>
+      <div class="meal-macros">
+        <div class="macro"><div class="macro-val cal">~200</div><div class="macro-label">kcal</div></div>
+        <div class="macro"><div class="macro-val pro">16g</div><div class="macro-label">protein</div></div>
+      </div>
+    </div>
+    <div class="meal-body">
+      <ul class="meal-items">
+        <li>1 cucumber + 2 tomatoes + raw mango</li>
+        <li>100g paneer + ½ onion + green chilli</li>
+        <li>Chaat masala + red chilli + black salt + lemon</li>
+        <li>Top: pomegranate seeds + coriander + mint</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- 7-DAY MEAL PLAN -->
+
+  <section>
+    <div class="section-title"><span class="icon">🍽️</span> 7-Day High-Protein Meal Rotation <div class="line"></div></div>
+    <div style="font-size:13px; color:var(--muted); margin-bottom:20px;">3 recipe days that repeat every 2 days — less prep, consistent results. All dinners are low-carb for overnight fat burn.</div>
+
+```
+<!-- Rotation legend -->
+<div style="display:grid; grid-template-columns: repeat(3,1fr); gap:12px; margin-bottom:28px;">
+  <div style="background:var(--card); border:1px solid var(--border); border-top:3px solid var(--accent3); border-radius:10px; padding:16px;">
+    <div style="font-family:'Bebas Neue',sans-serif; font-size:22px; color:var(--accent3);">DAY A</div>
+    <div style="font-size:11px; color:var(--muted); margin-bottom:8px;">Mon · Thu</div>
+    <div style="font-size:12px; line-height:1.8;">🥚 Masala Omelette + Paneer<br>🍛 Brown Rice + Moong Dal<br>🥘 Dry Paneer Bhurji + Curd</div>
+    <div style="margin-top:10px; font-family:'DM Mono',monospace; font-size:11px; color:var(--green);">~104g protein · ~1,290 kcal</div>
+  </div>
+  <div style="background:var(--card); border:1px solid var(--border); border-top:3px solid var(--accent); border-radius:10px; padding:16px;">
+    <div style="font-family:'Bebas Neue',sans-serif; font-size:22px; color:var(--accent);">DAY B</div>
+    <div style="font-size:11px; color:var(--muted); margin-bottom:8px;">Tue · Fri</div>
+    <div style="font-size:12px; line-height:1.8;">🫙 Greek Yogurt Bowl + Eggs<br>🫘 Kala Chana + Paneer Curry<br>🍲 Masoor Dal + Paneer Soup</div>
+    <div style="margin-top:10px; font-family:'DM Mono',monospace; font-size:11px; color:var(--green);">~101g protein · ~1,260 kcal</div>
+  </div>
+  <div style="background:var(--card); border:1px solid var(--border); border-top:3px solid var(--accent2); border-radius:10px; padding:16px;">
+    <div style="font-family:'Bebas Neue',sans-serif; font-size:22px; color:var(--accent2);">DAY C</div>
+    <div style="font-size:11px; color:var(--muted); margin-bottom:8px;">Wed · Sat</div>
+    <div style="font-size:12px; line-height:1.8;">🥞 Besan Egg Cheela + Paneer<br>🌾 Quinoa Rajma Paneer Bowl<br>🥬 Palak Paneer Bowl</div>
+    <div style="margin-top:10px; font-family:'DM Mono',monospace; font-size:11px; color:var(--green);">~106g protein · ~1,290 kcal</div>
+  </div>
+</div>
+
+<!-- Day-by-day table -->
+<div class="card" style="overflow-x:auto;">
+  <table style="width:100%; border-collapse:collapse; font-size:13px;">
+    <thead>
+      <tr style="border-bottom:1px solid var(--border);">
+        <th style="text-align:left; padding:10px 12px; font-family:'DM Mono',monospace; font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em; width:80px;">Day</th>
+        <th style="text-align:left; padding:10px 12px; font-family:'DM Mono',monospace; font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em;">☀️ Breakfast</th>
+        <th style="text-align:left; padding:10px 12px; font-family:'DM Mono',monospace; font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em;">🌤️ Lunch</th>
+        <th style="text-align:left; padding:10px 12px; font-family:'DM Mono',monospace; font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em;">🌙 Dinner</th>
+        <th style="text-align:right; padding:10px 12px; font-family:'DM Mono',monospace; font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em;">Protein</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid var(--border); background:rgba(71,201,255,0.04);">
+        <td style="padding:12px; font-family:'Bebas Neue',sans-serif; font-size:18px; color:var(--accent3);">MON</td>
+        <td style="padding:12px;">Masala Omelette + Paneer</td>
+        <td style="padding:12px;">Brown Rice + Moong Dal + Paneer</td>
+        <td style="padding:12px;">Dry Paneer Bhurji + Curd</td>
+        <td style="padding:12px; text-align:right; font-family:'DM Mono',monospace; color:var(--green);">~104g</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border); background:rgba(232,255,71,0.04);">
+        <td style="padding:12px; font-family:'Bebas Neue',sans-serif; font-size:18px; color:var(--accent);">TUE</td>
+        <td style="padding:12px;">Greek Yogurt Bowl + Boiled Eggs</td>
+        <td style="padding:12px;">Kala Chana + Paneer Curry + Roti</td>
+        <td style="padding:12px;">Masoor Dal + Paneer Soup</td>
+        <td style="padding:12px; text-align:right; font-family:'DM Mono',monospace; color:var(--green);">~101g</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border); background:rgba(255,107,53,0.04);">
+        <td style="padding:12px; font-family:'Bebas Neue',sans-serif; font-size:18px; color:var(--accent2);">WED</td>
+        <td style="padding:12px;">Besan Egg Cheela + Paneer Stuffing</td>
+        <td style="padding:12px;">Quinoa Rajma Paneer Bowl</td>
+        <td style="padding:12px;">Palak Paneer Bowl</td>
+        <td style="padding:12px; text-align:right; font-family:'DM Mono',monospace; color:var(--green);">~106g</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border); background:rgba(71,201,255,0.04);">
+        <td style="padding:12px; font-family:'Bebas Neue',sans-serif; font-size:18px; color:var(--accent3);">THU</td>
+        <td style="padding:12px; color:var(--muted);">🔁 Masala Omelette + Paneer</td>
+        <td style="padding:12px; color:var(--muted);">🔁 Brown Rice + Moong Dal + Paneer</td>
+        <td style="padding:12px; color:var(--muted);">🔁 Dry Paneer Bhurji + Curd</td>
+        <td style="padding:12px; text-align:right; font-family:'DM Mono',monospace; color:var(--green);">~104g</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border); background:rgba(232,255,71,0.04);">
+        <td style="padding:12px; font-family:'Bebas Neue',sans-serif; font-size:18px; color:var(--accent);">FRI</td>
+        <td style="padding:12px; color:var(--muted);">🔁 Greek Yogurt Bowl + Boiled Eggs</td>
+        <td style="padding:12px; color:var(--muted);">🔁 Kala Chana + Paneer Curry + Roti</td>
+        <td style="padding:12px; color:var(--muted);">🔁 Masoor Dal + Paneer Soup</td>
+        <td style="padding:12px; text-align:right; font-family:'DM Mono',monospace; color:var(--green);">~101g</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border); background:rgba(255,107,53,0.04);">
+        <td style="padding:12px; font-family:'Bebas Neue',sans-serif; font-size:18px; color:var(--accent2);">SAT</td>
+        <td style="padding:12px; color:var(--muted);">🔁 Besan Egg Cheela + Paneer Stuffing</td>
+        <td style="padding:12px; color:var(--muted);">🔁 Quinoa Rajma Paneer Bowl</td>
+        <td style="padding:12px; color:var(--muted);">🔁 Palak Paneer Bowl</td>
+        <td style="padding:12px; text-align:right; font-family:'DM Mono',monospace; color:var(--green);">~106g</td>
+      </tr>
+      <tr style="background:rgba(74,222,128,0.04);">
+        <td style="padding:12px; font-family:'Bebas Neue',sans-serif; font-size:18px; color:var(--green);">SUN</td>
+        <td style="padding:12px;">Any Day A/B/C breakfast</td>
+        <td style="padding:12px;">Light choice + big salad</td>
+        <td style="padding:12px;">Soup or curd + salad only</td>
+        <td style="padding:12px; text-align:right; font-family:'DM Mono',monospace; color:var(--green);">~90g+</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Recipe Detail Cards -->
+<div style="margin-top:28px;">
+  <div style="font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:0.05em; margin-bottom:16px; color:var(--text);">📋 Full Recipe Details</div>
+
+  <!-- DAY A Recipes -->
+  <div style="font-family:'DM Mono',monospace; font-size:11px; color:var(--accent3); text-transform:uppercase; letter-spacing:0.15em; margin-bottom:12px; margin-top:20px;">DAY A — Mon & Thu</div>
+  <div class="meal-grid">
+
+    <div class="meal-card">
+      <div class="meal-img-grad" style="background:linear-gradient(135deg,#f7971e,#ffd200);display:flex;align-items:center;justify-content:center;gap:10px;">
+        <span style="font-size:24px;">🥚</span><span style="font-family:'Bebas Neue',sans-serif;font-size:16px;color:rgba(0,0,0,0.8);letter-spacing:0.1em;">BREAKFAST · ~38g protein</span>
+      </div>
+      <div class="meal-header">
+        <div><div class="meal-time">8:00–8:30 AM · 10 min</div><div class="meal-name">Masala Omelette with Paneer</div></div>
+        <div class="meal-macros"><div class="macro"><div class="macro-val cal">420</div><div class="macro-label">kcal</div></div><div class="macro"><div class="macro-val pro">38g</div><div class="macro-label">protein</div></div></div>
+      </div>
+      <div class="meal-body">
+        <ul class="meal-items">
+          <li>3 whole eggs + 50g paneer crumbled</li>
+          <li>30g spinach + ¼ onion + 1 green chilli</li>
+          <li>Turmeric + cumin + salt + pepper</li>
+          <li>½ tsp ghee · serve with 1 whole wheat toast</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="meal-card">
+      <div class="meal-img-grad" style="background:linear-gradient(135deg,#f46b45,#eea849);display:flex;align-items:center;justify-content:center;gap:10px;">
+        <span style="font-size:24px;">🍛</span><span style="font-family:'Bebas Neue',sans-serif;font-size:16px;color:rgba(255,255,255,0.9);letter-spacing:0.1em;">LUNCH · ~32g protein</span>
+      </div>
+      <div class="meal-header">
+        <div><div class="meal-time">1:00–1:30 PM · 20 min</div><div class="meal-name">Brown Rice + Moong Dal + Paneer</div></div>
+        <div class="meal-macros"><div class="macro"><div class="macro-val cal">490</div><div class="macro-label">kcal</div></div><div class="macro"><div class="macro-val pro">32g</div><div class="macro-label">protein</div></div></div>
+      </div>
+      <div class="meal-body">
+        <ul class="meal-items">
+          <li>¾ cup brown rice + 1 cup moong dal cooked</li>
+          <li>80g paneer cubed in cumin-tomato masala</li>
+          <li>Turmeric + coriander powder + ½ tsp ghee</li>
+          <li>+ cucumber-tomato salad on the side</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="meal-card">
+      <div class="meal-img-grad" style="background:linear-gradient(135deg,#a18cd1,#fbc2eb);display:flex;align-items:center;justify-content:center;gap:10px;">
+        <span style="font-size:24px;">🥘</span><span style="font-family:'Bebas Neue',sans-serif;font-size:16px;color:rgba(255,255,255,0.9);letter-spacing:0.1em;">DINNER · ~34g protein</span>
+      </div>
+      <div class="meal-header">
+        <div><div class="meal-time">7:30 PM · Low-carb</div><div class="meal-name">Dry Paneer Bhurji + Curd</div></div>
+        <div class="meal-macros"><div class="macro"><div class="macro-val cal">380</div><div class="macro-label">kcal</div></div><div class="macro"><div class="macro-val pro">34g</div><div class="macro-label">protein</div></div></div>
+      </div>
+      <div class="meal-body">
+        <ul class="meal-items">
+          <li>120g paneer + 1 capsicum + 1 tomato</li>
+          <li>Garam masala + coriander + red chilli + ghee</li>
+          <li>Cook on high heat — golden paneer edges</li>
+          <li>+ 1 cup low-fat curd as raita side</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- DAY B Recipes -->
+  <div style="font-family:'DM Mono',monospace; font-size:11px; color:var(--accent); text-transform:uppercase; letter-spacing:0.15em; margin-bottom:12px; margin-top:28px;">DAY B — Tue & Fri</div>
+  <div class="meal-grid">
+
+    <div class="meal-card">
+      <div class="meal-img-grad" style="background:linear-gradient(135deg,#4facfe,#00f2fe);display:flex;align-items:center;justify-content:center;gap:10px;">
+        <span style="font-size:24px;">🫙</span><span style="font-family:'Bebas Neue',sans-serif;font-size:16px;color:rgba(255,255,255,0.9);letter-spacing:0.1em;">BREAKFAST · ~36g protein</span>
+      </div>
+      <div class="meal-header">
+        <div><div class="meal-time">8:00 AM · Zero cooking</div><div class="meal-name">Greek Yogurt Protein Bowl + Eggs</div></div>
+        <div class="meal-macros"><div class="macro"><div class="macro-val cal">410</div><div class="macro-label">kcal</div></div><div class="macro"><div class="macro-val pro">36g</div><div class="macro-label">protein</div></div></div>
+      </div>
+      <div class="meal-body">
+        <ul class="meal-items">
+          <li>200g low-fat Greek yogurt (unsweetened)</li>
+          <li>2 boiled eggs + 10 almonds</li>
+          <li>30g mixed seeds (flax, chia, sunflower)</li>
+          <li>1 banana/apple + ½ tsp cinnamon</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="meal-card">
+      <div class="meal-img-grad" style="background:linear-gradient(135deg,#56ab2f,#a8e063);display:flex;align-items:center;justify-content:center;gap:10px;">
+        <span style="font-size:24px;">🫘</span><span style="font-family:'Bebas Neue',sans-serif;font-size:16px;color:rgba(255,255,255,0.9);letter-spacing:0.1em;">LUNCH · ~35g protein</span>
+      </div>
+      <div class="meal-header">
+        <div><div class="meal-time">1:00–1:30 PM · 25 min</div><div class="meal-name">Kala Chana + Paneer Curry + Roti</div></div>
+        <div class="meal-macros"><div class="macro"><div class="macro-val cal">500</div><div class="macro-label">kcal</div></div><div class="macro"><div class="macro-val pro">35g</div><div class="macro-label">protein</div></div></div>
+      </div>
+      <div class="meal-body">
+        <ul class="meal-items">
+          <li>150g boiled kala chana + 100g paneer</li>
+          <li>Tomato-onion masala + ginger-garlic paste</li>
+          <li>Chole masala + turmeric + cumin + ½ tsp ghee</li>
+          <li>+ 1 whole wheat roti + cucumber salad</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="meal-card">
+      <div class="meal-img-grad" style="background:linear-gradient(135deg,#f093fb,#f5576c);display:flex;align-items:center;justify-content:center;gap:10px;">
+        <span style="font-size:24px;">🍲</span><span style="font-family:'Bebas Neue',sans-serif;font-size:16px;color:rgba(255,255,255,0.9);letter-spacing:0.1em;">DINNER · ~30g protein</span>
+      </div>
+      <div class="meal-header">
+        <div><div class="meal-time">7:30 PM · Low-carb soup</div><div class="meal-name">Masoor Dal + Paneer Soup Bowl</div></div>
+        <div class="meal-macros"><div class="macro"><div class="macro-val cal">360</div><div class="macro-label">kcal</div></div><div class="macro"><div class="macro-val pro">30g</div><div class="macro-label">protein</div></div></div>
+      </div>
+      <div class="meal-body">
+        <ul class="meal-items">
+          <li>¾ cup masoor dal boiled till mushy</li>
+          <li>80g paneer added at the end</li>
+          <li>Tadka: ghee + cumin + onion + tomato + ginger</li>
+          <li>No roti, no rice — dal as a thick soup only</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- DAY C Recipes -->
+  <div style="font-family:'DM Mono',monospace; font-size:11px; color:var(--accent2); text-transform:uppercase; letter-spacing:0.15em; margin-bottom:12px; margin-top:28px;">DAY C — Wed & Sat</div>
+  <div class="meal-grid">
+
+    <div class="meal-card">
+      <div class="meal-img-grad" style="background:linear-gradient(135deg,#ff9a9e,#fecfef);display:flex;align-items:center;justify-content:center;gap:10px;">
+        <span style="font-size:24px;">🥞</span><span style="font-family:'Bebas Neue',sans-serif;font-size:16px;color:rgba(80,0,0,0.7);letter-spacing:0.1em;">BREAKFAST · ~40g protein</span>
+      </div>
+      <div class="meal-header">
+        <div><div class="meal-time">8:00 AM · 15 min</div><div class="meal-name">Besan Egg Cheela + Paneer Stuffing</div></div>
+        <div class="meal-macros"><div class="macro"><div class="macro-val cal">430</div><div class="macro-label">kcal</div></div><div class="macro"><div class="macro-val pro">40g</div><div class="macro-label">protein</div></div></div>
+      </div>
+      <div class="meal-body">
+        <ul class="meal-items">
+          <li>½ cup besan + 2 eggs whisked into batter</li>
+          <li>60g paneer grated + spinach/methi + onion</li>
+          <li>Ajwain + turmeric + salt — cook thin, crispy</li>
+          <li>Eat with a small bowl of curd</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="meal-card">
+      <div class="meal-img-grad" style="background:linear-gradient(135deg,#d4fc79,#96e6a1);display:flex;align-items:center;justify-content:center;gap:10px;">
+        <span style="font-size:24px;">🌾</span><span style="font-family:'Bebas Neue',sans-serif;font-size:16px;color:rgba(0,60,0,0.8);letter-spacing:0.1em;">LUNCH · ~34g protein</span>
+      </div>
+      <div class="meal-header">
+        <div><div class="meal-time">1:00–1:30 PM · 20 min</div><div class="meal-name">Quinoa Rajma Paneer Power Bowl</div></div>
+        <div class="meal-macros"><div class="macro"><div class="macro-val cal">490</div><div class="macro-label">kcal</div></div><div class="macro"><div class="macro-val pro">34g</div><div class="macro-label">protein</div></div></div>
+      </div>
+      <div class="meal-body">
+        <ul class="meal-items">
+          <li>½ cup quinoa cooked fluffy</li>
+          <li>100g grilled paneer + 100g boiled rajma</li>
+          <li>Cucumber + tomato + capsicum tossed in</li>
+          <li>Lemon + olive oil + chaat masala dressing</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="meal-card">
+      <div class="meal-img-grad" style="background:linear-gradient(135deg,#134e5e,#71b280);display:flex;align-items:center;justify-content:center;gap:10px;">
+        <span style="font-size:24px;">🥬</span><span style="font-family:'Bebas Neue',sans-serif;font-size:16px;color:rgba(255,255,255,0.9);letter-spacing:0.1em;">DINNER · ~32g protein</span>
+      </div>
+      <div class="meal-header">
+        <div><div class="meal-time">7:30 PM · Low-carb · No roti</div><div class="meal-name">Palak Paneer Bowl (No Roti)</div></div>
+        <div class="meal-macros"><div class="macro"><div class="macro-val cal">370</div><div class="macro-label">kcal</div></div><div class="macro"><div class="macro-val pro">32g</div><div class="macro-label">protein</div></div></div>
+      </div>
+      <div class="meal-body">
+        <ul class="meal-items">
+          <li>150g fresh palak blanched + blended smooth</li>
+          <li>150g paneer simmered in spinach gravy</li>
+          <li>Ginger-garlic + garam masala + 2 tbsp curd</li>
+          <li>Eat as a bowl — no bread, no rice needed</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Key rules for meals -->
+<div style="background:rgba(232,255,71,0.06); border:1px solid rgba(232,255,71,0.2); border-radius:12px; padding:20px; margin-top:24px;">
+  <div style="font-family:'Bebas Neue',sans-serif; font-size:20px; color:var(--accent); margin-bottom:12px;">🔑 Belly-Fat Shred Rules</div>
+  <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); gap:10px;">
+    <div style="font-size:12px; color:var(--text);">🚫 <strong>No roti/rice at dinner</strong> — every night is low-carb to trigger overnight fat oxidation</div>
+    <div style="font-size:12px; color:var(--text);">🥛 <strong>Paneer at every meal</strong> — keeps you full, prevents muscle loss during deficit</div>
+    <div style="font-size:12px; color:var(--text);">🔁 <strong>Repeat every 2 days</strong> — less grocery shopping, easier to stay consistent</div>
+    <div style="font-size:12px; color:var(--text);">💊 <strong>Add whey protein shake</strong> — tops meals to your 132g daily protein target</div>
+    <div style="font-size:12px; color:var(--text);">🥗 <strong>Salad with every lunch</strong> — rotate the 4 salad recipes to add fibre + micronutrients</div>
+    <div style="font-size:12px; color:var(--text);">⏰ <strong>Eat dinner before 8 PM</strong> — late eating stores fat, especially at 37</div>
+  </div>
+</div>
+```
+
   </section>
 
 </div>
