@@ -308,12 +308,17 @@
   .totals-bar .t-sub { font-size: 10px; font-family: 'DM Mono', monospace; text-transform: uppercase; opacity: 0.7; }
 
   /* ── WATER ── */
-  .water-row { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+  .water-row { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
   .water-row:last-child { border-bottom: none; }
-  .water-time { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); width: 175px; flex-shrink: 0; }
-  .water-bar-wrap { flex: 1; height: 6px; background: var(--border); border-radius: 4px; overflow: hidden; }
+  .water-time { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); width: 80px; flex-shrink: 0; }
+  .water-bar-wrap { flex: 1; min-width: 80px; height: 6px; background: var(--border); border-radius: 4px; overflow: hidden; }
   .water-bar { height: 100%; background: var(--accent3); border-radius: 4px; }
   .water-amt { font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: var(--accent3); width: 60px; text-align: right; }
+  .drink-label { font-size: 12px; color: var(--text); width: 200px; text-align: right; flex-shrink: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  @media (max-width: 500px) {
+    .drink-label { width: 100%; text-align: left; font-size: 11px; }
+    .water-time { width: 65px; }
+  }
 
   /* ── CALENDAR ── */
   .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
@@ -445,6 +450,11 @@
     border: 1px solid var(--border);
     box-shadow: 0 4px 16px rgba(0,0,0,0.3);
   }
+
+  details summary::-webkit-details-marker { display: none; }
+  details[open] summary span { transform: rotate(45deg); display: inline-block; transition: transform 0.2s; }
+  details { transition: all 0.2s; }
+  details[open] { border-color: rgba(232,255,71,0.3); }
 
   section { margin-bottom: 48px; }
 
@@ -1731,47 +1741,47 @@
       <div class="water-row">
         <div class="water-time">6:00 AM</div>
         <div class="water-bar-wrap"><div class="water-bar" style="width:100%; background:linear-gradient(90deg,#f9d423,#f83600);"></div></div>
-        <div style="font-size:13px; color:var(--text); width:220px; text-align:right; flex-shrink:0;">🍋 Warm Lemon Water (500ml)</div>
+        <div class="drink-label">🍋 Warm Lemon Water (500ml)</div>
       </div>
       <div class="water-row">
         <div class="water-time">6:30 AM</div>
         <div class="water-bar-wrap"><div class="water-bar" style="width:20%; background:#3a1a05;"></div></div>
-        <div style="font-size:13px; color:var(--text); width:220px; text-align:right; flex-shrink:0;">☕ Black Coffee (pre-workout)</div>
+        <div class="drink-label">☕ Black Coffee (pre-workout)</div>
       </div>
       <div class="water-row">
         <div class="water-time">8:30 AM</div>
         <div class="water-bar-wrap"><div class="water-bar" style="width:60%;"></div></div>
-        <div style="font-size:13px; color:var(--text); width:220px; text-align:right; flex-shrink:0;">💧 Plain Water (300ml)</div>
+        <div class="drink-label">💧 Plain Water (300ml)</div>
       </div>
       <div class="water-row">
         <div class="water-time">10:30 AM</div>
         <div class="water-bar-wrap"><div class="water-bar" style="width:100%; background:linear-gradient(90deg,#56ab2f,#a8e063);"></div></div>
-        <div style="font-size:13px; color:var(--text); width:220px; text-align:right; flex-shrink:0;">🥥 Coconut Water or Chia Water</div>
+        <div class="drink-label">🥥 Coconut Water or Chia Water</div>
       </div>
       <div class="water-row">
         <div class="water-time">1:00 PM</div>
         <div class="water-bar-wrap"><div class="water-bar" style="width:70%; background:linear-gradient(90deg,#c79037,#8b5e0a);"></div></div>
-        <div style="font-size:13px; color:var(--text); width:220px; text-align:right; flex-shrink:0;">🌿 Jeera Water (before lunch)</div>
+        <div class="drink-label">🌿 Jeera Water (before lunch)</div>
       </div>
       <div class="water-row">
         <div class="water-time">3:00 PM</div>
         <div class="water-bar-wrap"><div class="water-bar" style="width:50%; background:linear-gradient(90deg,#134e5e,#71b280);"></div></div>
-        <div style="font-size:13px; color:var(--text); width:220px; text-align:right; flex-shrink:0;">🍵 Green Tea</div>
+        <div class="drink-label">🍵 Green Tea</div>
       </div>
       <div class="water-row">
         <div class="water-time">5:00 PM</div>
         <div class="water-bar-wrap"><div class="water-bar" style="width:80%; background:linear-gradient(90deg,#84fab0,#8fd3f4);"></div></div>
-        <div style="font-size:13px; color:var(--text); width:220px; text-align:right; flex-shrink:0;">🌱 Sabja Cooler or Plain Water</div>
+        <div class="drink-label">🌱 Sabja Cooler or Plain Water</div>
       </div>
       <div class="water-row">
         <div class="water-time">7:00 PM</div>
         <div class="water-bar-wrap"><div class="water-bar" style="width:60%; background:linear-gradient(90deg,#ffb347,#ffcc33);"></div></div>
-        <div style="font-size:13px; color:var(--text); width:220px; text-align:right; flex-shrink:0;">🫚 Ginger Lemon Tea</div>
+        <div class="drink-label">🫚 Ginger Lemon Tea</div>
       </div>
       <div class="water-row" style="border-bottom:none;">
         <div class="water-time">9:30 PM</div>
         <div class="water-bar-wrap"><div class="water-bar" style="width:40%; background:linear-gradient(90deg,#f7c59f,#e08e45);"></div></div>
-        <div style="font-size:13px; color:var(--text); width:220px; text-align:right; flex-shrink:0;">🌙 Turmeric Milk (before bed)</div>
+        <div class="drink-label">🌙 Turmeric Milk (before bed)</div>
       </div>
     </div>
 
@@ -1808,6 +1818,415 @@
       💧 <strong style="color:var(--accent3);">Total daily fluid target with creatine:</strong> ~3.8–4L on workout days · ~3.6L on rest days. Your drinks above cover ~1.5L — the rest comes from plain water throughout the day.
     </div>
 
+  </section>
+
+  <!-- SUPPLEMENT GUIDE -->
+  <section>
+    <div class="section-title"><span class="icon">💊</span> Supplement Guide <div class="line"></div></div>
+    <div style="font-size:13px; color:var(--muted); margin-bottom:20px;">At 37 with a desk job, these supplements fill the gaps your diet alone can't cover. Keep it simple — no exotic pills needed.</div>
+
+    <div class="meal-grid">
+      <div class="meal-card">
+        <div class="meal-img-grad" style="background:linear-gradient(135deg,#e8ff47,#9ca300);display:flex;align-items:center;justify-content:center;gap:10px;">
+          <span style="font-size:28px;">⚡</span><span style="font-family:'Bebas Neue',sans-serif;font-size:16px;color:rgba(0,0,0,0.8);letter-spacing:0.1em;">CREATINE · DAILY</span>
+        </div>
+        <div class="meal-header">
+          <div><div class="meal-time">Post-workout in 600ml water</div><div class="meal-name">Creatine Monohydrate</div></div>
+          <div class="meal-macros"><div class="macro"><div class="macro-val pro">5g</div><div class="macro-label">daily</div></div></div>
+        </div>
+        <div class="meal-body">
+          <ul class="meal-items">
+            <li>5g/day — no loading phase needed</li>
+            <li>Take post-workout with 600ml water always</li>
+            <li>On rest days: take with morning meal</li>
+            <li>Expect 0.5–1kg water weight gain in Week 1 — normal</li>
+            <li>Increases strength by 10–15% within 4 weeks</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="meal-card">
+        <div class="meal-img-grad" style="background:linear-gradient(135deg,#f7971e,#ffd200);display:flex;align-items:center;justify-content:center;gap:10px;">
+          <span style="font-size:28px;">🥛</span><span style="font-family:'Bebas Neue',sans-serif;font-size:16px;color:rgba(0,0,0,0.8);letter-spacing:0.1em;">WHEY PROTEIN</span>
+        </div>
+        <div class="meal-header">
+          <div><div class="meal-time">Post-workout or mid-morning</div><div class="meal-name">Whey Protein Isolate</div></div>
+          <div class="meal-macros"><div class="macro"><div class="macro-val pro">25g</div><div class="macro-label">per scoop</div></div></div>
+        </div>
+        <div class="meal-body">
+          <ul class="meal-items">
+            <li>1 scoop (25–30g protein) post-workout</li>
+            <li>Choose isolate over concentrate — less bloating</li>
+            <li>Mix in water, not milk — saves 80 kcal</li>
+            <li>Skip on days you hit 132g protein from food</li>
+            <li>Best brands: Optimum Nutrition, MuscleBlaze Biozyme</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="meal-card">
+        <div class="meal-img-grad" style="background:linear-gradient(135deg,#f9d423,#e8890a);display:flex;align-items:center;justify-content:center;gap:10px;">
+          <span style="font-size:28px;">☀️</span><span style="font-family:'Bebas Neue',sans-serif;font-size:16px;color:rgba(255,255,255,0.9);letter-spacing:0.1em;">VITAMIN D3 + K2</span>
+        </div>
+        <div class="meal-header">
+          <div><div class="meal-time">With breakfast · Daily</div><div class="meal-name">Vitamin D3 + K2</div></div>
+          <div class="meal-macros"><div class="macro"><div class="macro-val pro">2000</div><div class="macro-label">IU/day</div></div></div>
+        </div>
+        <div class="meal-body">
+          <ul class="meal-items">
+            <li>2000–4000 IU D3 daily — desk job = low sun exposure</li>
+            <li>Always pair with K2 (100mcg) for absorption</li>
+            <li>D3 deficiency directly causes belly fat accumulation</li>
+            <li>Take with a fatty meal (breakfast or lunch)</li>
+            <li>Critical at 37 — testosterone and fat loss both depend on it</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="meal-card">
+        <div class="meal-img-grad" style="background:linear-gradient(135deg,#4facfe,#00f2fe);display:flex;align-items:center;justify-content:center;gap:10px;">
+          <span style="font-size:28px;">🐟</span><span style="font-family:'Bebas Neue',sans-serif;font-size:16px;color:rgba(255,255,255,0.9);letter-spacing:0.1em;">OMEGA-3</span>
+        </div>
+        <div class="meal-header">
+          <div><div class="meal-time">With lunch · Daily</div><div class="meal-name">Omega-3 Fish Oil</div></div>
+          <div class="meal-macros"><div class="macro"><div class="macro-val pro">1g</div><div class="macro-label">EPA+DHA</div></div></div>
+        </div>
+        <div class="meal-body">
+          <ul class="meal-items">
+            <li>1000mg EPA+DHA daily (check label, not just fish oil mg)</li>
+            <li>Directly reduces visceral (belly) fat</li>
+            <li>Reduces inflammation from desk sitting</li>
+            <li>Take with lunch to avoid fish burps</li>
+            <li>Vegetarian alt: Algae-based Omega-3 capsules</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="meal-card">
+        <div class="meal-img-grad" style="background:linear-gradient(135deg,#a18cd1,#fbc2eb);display:flex;align-items:center;justify-content:center;gap:10px;">
+          <span style="font-size:28px;">🌙</span><span style="font-family:'Bebas Neue',sans-serif;font-size:16px;color:rgba(255,255,255,0.9);letter-spacing:0.1em;">MAGNESIUM</span>
+        </div>
+        <div class="meal-header">
+          <div><div class="meal-time">Before bed · Daily</div><div class="meal-name">Magnesium Glycinate</div></div>
+          <div class="meal-macros"><div class="macro"><div class="macro-val pro">300</div><div class="macro-label">mg/day</div></div></div>
+        </div>
+        <div class="meal-body">
+          <ul class="meal-items">
+            <li>300–400mg magnesium glycinate before bed</li>
+            <li>Improves deep sleep quality — critical for fat loss</li>
+            <li>Reduces muscle cramps from heavy training</li>
+            <li>Lowers cortisol — directly shrinks belly fat</li>
+            <li>Most Indians are deficient — especially desk workers</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="meal-card">
+        <div class="meal-img-grad" style="background:linear-gradient(135deg,#ff6b35,#c0392b);display:flex;align-items:center;justify-content:center;gap:10px;">
+          <span style="font-size:28px;">🚫</span><span style="font-family:'Bebas Neue',sans-serif;font-size:16px;color:rgba(255,255,255,0.9);letter-spacing:0.1em;">AVOID THESE</span>
+        </div>
+        <div class="meal-header">
+          <div><div class="meal-time">Not needed · Save your money</div><div class="meal-name">Supplements to Skip</div></div>
+        </div>
+        <div class="meal-body">
+          <ul class="meal-items">
+            <li>❌ Fat burners — raise heart rate, not worth it</li>
+            <li>❌ Pre-workouts with sugar — spikes insulin</li>
+            <li>❌ Mass gainers — opposite of your goal</li>
+            <li>❌ BCAAs — covered by your whey + food protein</li>
+            <li>❌ Detox teas — no evidence, often harmful</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRESS TRACKER -->
+  <section>
+    <div class="section-title"><span class="icon">📏</span> Weekly Progress Tracker <div class="line"></div></div>
+    <div style="font-size:13px; color:var(--muted); margin-bottom:20px;">Weigh every Monday morning — fasted, same time. Measure waist at navel level. Track honestly.</div>
+
+    <div class="card" style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:13px; min-width:600px;">
+        <thead>
+          <tr style="border-bottom:2px solid var(--border);">
+            <th style="text-align:left; padding:10px 12px; font-family:'DM Mono',monospace; font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em;">Week</th>
+            <th style="text-align:left; padding:10px 12px; font-family:'DM Mono',monospace; font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em;">Date</th>
+            <th style="text-align:center; padding:10px 12px; font-family:'DM Mono',monospace; font-size:10px; color:var(--accent); text-transform:uppercase; letter-spacing:0.1em;">Weight (kg)</th>
+            <th style="text-align:center; padding:10px 12px; font-family:'DM Mono',monospace; font-size:10px; color:var(--accent2); text-transform:uppercase; letter-spacing:0.1em;">Waist (cm)</th>
+            <th style="text-align:center; padding:10px 12px; font-family:'DM Mono',monospace; font-size:10px; color:var(--accent3); text-transform:uppercase; letter-spacing:0.1em;">Change</th>
+            <th style="text-align:left; padding:10px 12px; font-family:'DM Mono',monospace; font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em;">Notes</th>
+          </tr>
+        </thead>
+        <tbody id="progressTable">
+          <tr style="border-bottom:1px solid var(--border); background:rgba(232,255,71,0.06);">
+            <td style="padding:10px 12px; font-family:'Bebas Neue',sans-serif; font-size:18px; color:var(--accent);">START</td>
+            <td style="padding:10px 12px; color:var(--muted); font-size:12px;">Jun 1</td>
+            <td style="padding:10px 12px; text-align:center;"><strong>80.0</strong></td>
+            <td style="padding:10px 12px; text-align:center;">___</td>
+            <td style="padding:10px 12px; text-align:center; color:var(--muted);">—</td>
+            <td style="padding:10px 12px; color:var(--muted); font-size:12px;">Baseline</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:10px 12px; font-family:'Bebas Neue',sans-serif; font-size:16px; color:var(--muted);">W1</td><td style="padding:10px 12px; color:var(--muted); font-size:12px;">Jun 8</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; color:var(--muted); font-size:12px;"></td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:10px 12px; font-family:'Bebas Neue',sans-serif; font-size:16px; color:var(--muted);">W2</td><td style="padding:10px 12px; color:var(--muted); font-size:12px;">Jun 15</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; color:var(--muted); font-size:12px;"></td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:10px 12px; font-family:'Bebas Neue',sans-serif; font-size:16px; color:var(--muted);">W3</td><td style="padding:10px 12px; color:var(--muted); font-size:12px;">Jun 22</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; color:var(--muted); font-size:12px;"></td></tr>
+          <tr style="border-bottom:1px solid var(--border); background:rgba(71,201,255,0.04);"><td style="padding:10px 12px; font-family:'Bebas Neue',sans-serif; font-size:16px; color:var(--accent3);">W4</td><td style="padding:10px 12px; color:var(--muted); font-size:12px;">Jun 29</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; color:var(--muted); font-size:12px;">End of June</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:10px 12px; font-family:'Bebas Neue',sans-serif; font-size:16px; color:var(--muted);">W5</td><td style="padding:10px 12px; color:var(--muted); font-size:12px;">Jul 6</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; color:var(--muted); font-size:12px;"></td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:10px 12px; font-family:'Bebas Neue',sans-serif; font-size:16px; color:var(--muted);">W6</td><td style="padding:10px 12px; color:var(--muted); font-size:12px;">Jul 13</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; color:var(--muted); font-size:12px;"></td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:10px 12px; font-family:'Bebas Neue',sans-serif; font-size:16px; color:var(--muted);">W7</td><td style="padding:10px 12px; color:var(--muted); font-size:12px;">Jul 20</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; color:var(--muted); font-size:12px;"></td></tr>
+          <tr style="border-bottom:1px solid var(--border); background:rgba(232,255,71,0.04);"><td style="padding:10px 12px; font-family:'Bebas Neue',sans-serif; font-size:16px; color:var(--accent);">W8</td><td style="padding:10px 12px; color:var(--muted); font-size:12px;">Jul 27</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; color:var(--muted); font-size:12px;">End of July</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:10px 12px; font-family:'Bebas Neue',sans-serif; font-size:16px; color:var(--muted);">W9</td><td style="padding:10px 12px; color:var(--muted); font-size:12px;">Aug 3</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; color:var(--muted); font-size:12px;"></td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:10px 12px; font-family:'Bebas Neue',sans-serif; font-size:16px; color:var(--muted);">W10</td><td style="padding:10px 12px; color:var(--muted); font-size:12px;">Aug 10</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; color:var(--muted); font-size:12px;"></td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:10px 12px; font-family:'Bebas Neue',sans-serif; font-size:16px; color:var(--muted);">W11</td><td style="padding:10px 12px; color:var(--muted); font-size:12px;">Aug 17</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; text-align:center;">___</td><td style="padding:10px 12px; color:var(--muted); font-size:12px;"></td></tr>
+          <tr style="background:rgba(74,222,128,0.08); border-bottom:2px solid var(--green);">
+            <td style="padding:10px 12px; font-family:'Bebas Neue',sans-serif; font-size:18px; color:var(--green);">GOAL</td>
+            <td style="padding:10px 12px; color:var(--muted); font-size:12px;">Sep 1</td>
+            <td style="padding:10px 12px; text-align:center; color:var(--green);"><strong>74.0</strong></td>
+            <td style="padding:10px 12px; text-align:center; color:var(--green);">___</td>
+            <td style="padding:10px 12px; text-align:center; color:var(--green);">−6 kg</td>
+            <td style="padding:10px 12px; color:var(--green); font-size:12px;">🏆 Visible Abs!</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="font-size:12px; color:var(--muted); margin-top:8px; padding:0 4px;">💡 Print this page and fill in each Monday. Don't weigh more than once a week — daily fluctuations will mess with your mindset.</div>
+  </section>
+
+  <!-- GROCERY LIST -->
+  <section>
+    <div class="section-title"><span class="icon">🛒</span> Weekly Grocery List <div class="line"></div></div>
+    <div style="font-size:13px; color:var(--muted); margin-bottom:20px;">Everything you need for one full week of the plan. Buy these once — prep on Sunday, cook fresh daily.</div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px,1fr)); gap:16px; margin-bottom:24px;">
+
+      <div class="card">
+        <div class="card-title" style="color:var(--accent);">🥚 Proteins</div>
+        <ul class="meal-items">
+          <li>Eggs — 1.5 dozen (18 eggs)</li>
+          <li>Paneer — 600g (buy 2×300g packs)</li>
+          <li>Greek yogurt — 500g (unsweetened)</li>
+          <li>Low-fat curd — 1kg</li>
+          <li>Whey protein — as per stock</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title" style="color:var(--accent2);">🥦 Vegetables</div>
+        <ul class="meal-items">
+          <li>Cucumber — 6 pcs</li>
+          <li>Tomatoes — 8–10 pcs</li>
+          <li>Spinach (palak) — 500g</li>
+          <li>Capsicum — 3 pcs (mixed colours)</li>
+          <li>Onion — 4 pcs · Garlic — 1 bulb · Ginger — 100g</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title" style="color:var(--accent3);">🌾 Grains & Legumes</div>
+        <ul class="meal-items">
+          <li>Brown rice — 500g</li>
+          <li>Whole wheat atta — 1kg</li>
+          <li>Moong dal — 250g</li>
+          <li>Masoor dal — 250g</li>
+          <li>Kala chana — 250g (soak overnight)</li>
+          <li>Rajma — 250g · Quinoa — 250g</li>
+          <li>Besan (chickpea flour) — 250g</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title" style="color:var(--green);">🌿 Herbs & Spices</div>
+        <ul class="meal-items">
+          <li>Fresh coriander — 1 bunch</li>
+          <li>Fresh mint — 1 bunch</li>
+          <li>Green chillies — 8–10 pcs</li>
+          <li>Turmeric, cumin, coriander powder</li>
+          <li>Garam masala, chaat masala, black salt</li>
+          <li>Ajwain (carom seeds)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title" style="color:#f9a84d;">🥜 Healthy Fats & Seeds</div>
+        <ul class="meal-items">
+          <li>Almonds — 100g</li>
+          <li>Chia seeds — 100g</li>
+          <li>Flaxseeds — 100g</li>
+          <li>Sunflower + pumpkin seeds — 100g mix</li>
+          <li>Ghee — 100g · Olive oil — 250ml</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title" style="color:#a78bfa;">🍋 Drinks & Extras</div>
+        <ul class="meal-items">
+          <li>Lemons — 8–10 pcs</li>
+          <li>Tender coconut — 3–4 (or 1L packaged as backup)</li>
+          <li>Green tea bags — 1 box</li>
+          <li>Sabja (basil seeds) + jeera</li>
+          <li>Himalayan pink salt</li>
+          <li>Low-fat milk — 1L (for turmeric milk)</li>
+        </ul>
+      </div>
+
+    </div>
+    <div style="background:rgba(74,222,128,0.06); border:1px solid rgba(74,222,128,0.2); border-radius:10px; padding:14px 18px; font-size:12px; color:var(--text);">
+      💡 <strong>Bulk Buy Tips:</strong> Dals, grains, seeds, and spices — buy monthly in bulk (saves 30–40%). Paneer, eggs, and veggies — buy twice a week for freshness. Soak kala chana and rajma overnight on Saturday for Sunday prep.
+    </div>
+  </section>
+
+  <!-- SLEEP & RECOVERY -->
+  <section>
+    <div class="section-title"><span class="icon">😴</span> Sleep & Recovery Guide <div class="line"></div></div>
+    <div style="font-size:13px; color:var(--muted); margin-bottom:20px;">At 37, recovery IS training. Poor sleep adds 2–3x more belly fat regardless of how well you eat or train.</div>
+
+    <div class="rules-grid">
+      <div class="rule-card">
+        <div class="rule-icon">🕙</div>
+        <div><div class="rule-title">Sleep Window: 10 PM – 6 AM</div><div class="rule-desc">Your body burns fat and builds muscle between 10 PM–2 AM during deep sleep. Missing this window means missed results.</div></div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-icon">📱</div>
+        <div><div class="rule-title">Screens Off by 9:30 PM</div><div class="rule-desc">Blue light suppresses melatonin by 50%. Switch to dark mode at 8 PM. Phone out of bedroom entirely.</div></div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-icon">🌡️</div>
+        <div><div class="rule-title">Cool Room = Better Fat Burn</div><div class="rule-desc">Sleeping in a cooler room (18–20°C) activates brown fat, which burns calories passively overnight.</div></div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-icon">🧘</div>
+        <div><div class="rule-title">5-Min Pre-Sleep Stretch</div><div class="rule-desc">Hip flexor stretch + child's pose + spinal twist. Reverses 8 hrs of desk sitting. Signals nervous system to recover.</div></div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-icon">⚠️</div>
+        <div><div class="rule-title">Signs of Overtraining</div><div class="rule-desc">Persistent fatigue, irritability, plateau in lifts, poor sleep, constant soreness — take 2 full rest days immediately.</div></div>
+      </div>
+      <div class="rule-card">
+        <div class="rule-icon">🏖️</div>
+        <div><div class="rule-title">Rest Days Are Not Cheat Days</div><div class="rule-desc">Rest days = muscle repair + fat loss consolidation. Keep eating clean, keep water intake up, go for a 30-min walk.</div></div>
+      </div>
+    </div>
+
+    <div style="background:rgba(161,139,250,0.06); border:1px solid rgba(161,139,250,0.2); border-radius:10px; padding:16px; margin-top:4px;">
+      <div style="font-family:'Bebas Neue',sans-serif; font-size:18px; color:#a78bfa; margin-bottom:8px;">⚡ Ideal Evening Routine (9–10 PM)</div>
+      <div style="display:flex; flex-wrap:wrap; gap:8px;">
+        <span style="background:rgba(161,139,250,0.1); border:1px solid rgba(161,139,250,0.2); border-radius:20px; padding:4px 12px; font-size:12px;">9:00 PM — Last meal done</span>
+        <span style="background:rgba(161,139,250,0.1); border:1px solid rgba(161,139,250,0.2); border-radius:20px; padding:4px 12px; font-size:12px;">9:15 PM — Turmeric milk</span>
+        <span style="background:rgba(161,139,250,0.1); border:1px solid rgba(161,139,250,0.2); border-radius:20px; padding:4px 12px; font-size:12px;">9:30 PM — Screens off</span>
+        <span style="background:rgba(161,139,250,0.1); border:1px solid rgba(161,139,250,0.2); border-radius:20px; padding:4px 12px; font-size:12px;">9:45 PM — 5-min stretch</span>
+        <span style="background:rgba(161,139,250,0.1); border:1px solid rgba(161,139,250,0.2); border-radius:20px; padding:4px 12px; font-size:12px;">10:00 PM — Lights out</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MINDSET & MOTIVATION -->
+  <section>
+    <div class="section-title"><span class="icon">🧠</span> Mindset & Motivation <div class="line"></div></div>
+    <div style="font-size:13px; color:var(--muted); margin-bottom:20px;">The plan is 30% physical, 70% mental. Most people quit at week 3 — know what's coming so you don't.</div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:16px; margin-bottom:24px;">
+
+      <div class="card" style="border-top:3px solid var(--accent3);">
+        <div style="font-family:'Bebas Neue',sans-serif; font-size:20px; color:var(--accent3); margin-bottom:8px;">🔄 Scale Plateau? Do This</div>
+        <ul class="meal-items">
+          <li>Reduce carbs by 20g for 1 week (skip rice at lunch)</li>
+          <li>Add 10 min extra HIIT to 2 sessions</li>
+          <li>Check sodium intake — excess causes water retention</li>
+          <li>Measure waist — fat loss continues even when scale stalls</li>
+        </ul>
+      </div>
+
+      <div class="card" style="border-top:3px solid var(--accent);">
+        <div style="font-family:'Bebas Neue',sans-serif; font-size:20px; color:var(--accent); margin-bottom:8px;">🍕 Cheat Meal Rules</div>
+        <ul class="meal-items">
+          <li>1 cheat meal per week max — not a cheat day</li>
+          <li>Schedule it (Saturday lunch works best)</li>
+          <li>Eat what you want, but stop at one plate</li>
+          <li>Train before the cheat meal — muscles absorb more</li>
+          <li>Back to plan immediately — no guilt spiral</li>
+        </ul>
+      </div>
+
+      <div class="card" style="border-top:3px solid var(--accent2);">
+        <div style="font-family:'Bebas Neue',sans-serif; font-size:20px; color:var(--accent2); margin-bottom:8px;">✈️ Travelling / Social Eating</div>
+        <ul class="meal-items">
+          <li>Always eat protein first at any meal</li>
+          <li>Choose dal + sabzi over biryani or pasta</li>
+          <li>Skip starters, eat main course mindfully</li>
+          <li>Water before every meal — kills 20% of hunger</li>
+          <li>1 missed workout = not a failure, just continue</li>
+        </ul>
+      </div>
+
+      <div class="card" style="border-top:3px solid var(--green);">
+        <div style="font-family:'Bebas Neue',sans-serif; font-size:20px; color:var(--green); margin-bottom:8px;">🏆 Milestone Rewards</div>
+        <ul class="meal-items">
+          <li>−1 kg: New workout gear or shoes</li>
+          <li>−2 kg: Book a spa or massage session</li>
+          <li>−3 kg: New outfit in target size</li>
+          <li>−5 kg: Weekend trip or experience</li>
+          <li>Goal reached: Whatever you've been dreaming of 🎯</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div style="background:var(--card); border:1px solid var(--border); border-radius:12px; padding:20px; text-align:center;">
+      <div style="font-family:'Bebas Neue',sans-serif; font-size:36px; color:var(--accent); line-height:1; margin-bottom:8px;">"THE SCALE MEASURES GRAVITY.<br>NOT YOUR PROGRESS."</div>
+      <div style="font-size:12px; color:var(--muted);">Track energy levels, strength gains, how clothes fit, and waist measurements — not just the number on the scale.</div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="section-title"><span class="icon">❓</span> FAQ & Troubleshooting <div class="line"></div></div>
+    <div style="font-size:13px; color:var(--muted); margin-bottom:20px;">The most common questions — answered honestly.</div>
+
+    <div style="display:flex; flex-direction:column; gap:12px;">
+
+      <details style="background:var(--card); border:1px solid var(--border); border-radius:10px; padding:16px; cursor:pointer;">
+        <summary style="font-weight:600; font-size:14px; list-style:none; display:flex; justify-content:space-between; align-items:center;">Why am I not losing weight after 2 weeks? <span style="color:var(--accent); font-family:'Bebas Neue',sans-serif; font-size:18px;">+</span></summary>
+        <div style="margin-top:12px; font-size:13px; color:var(--muted); line-height:1.7;">
+          Week 1–2 often shows no loss because creatine adds 0.5–1kg water weight. Also check: are you actually hitting your calorie deficit? Weigh and log everything for 3 days — most people underestimate by 300–400 kcal/day. If deficit is correct, trust the process — fat loss shows up on the scale in weeks 3–4.
+        </div>
+      </details>
+
+      <details style="background:var(--card); border:1px solid var(--border); border-radius:10px; padding:16px; cursor:pointer;">
+        <summary style="font-weight:600; font-size:14px; list-style:none; display:flex; justify-content:space-between; align-items:center;">Can I skip a workout day? <span style="color:var(--accent); font-family:'Bebas Neue',sans-serif; font-size:18px;">+</span></summary>
+        <div style="margin-top:12px; font-size:13px; color:var(--muted); line-height:1.7;">
+          Yes — life happens. Missing 1 day won't break results. But if you miss 2+ days in a row, your momentum breaks. Rule: if you miss morning, do 20 min of core + a 30-min brisk walk in the evening instead. Never go 2 consecutive days without movement.
+        </div>
+      </details>
+
+      <details style="background:var(--card); border:1px solid var(--border); border-radius:10px; padding:16px; cursor:pointer;">
+        <summary style="font-weight:600; font-size:14px; list-style:none; display:flex; justify-content:space-between; align-items:center;">The scale went up — did I gain fat? <span style="color:var(--accent); font-family:'Bebas Neue',sans-serif; font-size:18px;">+</span></summary>
+        <div style="margin-top:12px; font-size:13px; color:var(--muted); line-height:1.7;">
+          Almost certainly not. Scale goes up due to: water retention (high sodium, carbs), muscle glycogen after a heavy workout, inflammation after a new exercise, hormonal fluctuation, or digestive contents. True fat gain requires eating 3500 kcal ABOVE maintenance — that's not happening on your plan. Check waist measurement — if that's stable or down, you're fine.
+        </div>
+      </details>
+
+      <details style="background:var(--card); border:1px solid var(--border); border-radius:10px; padding:16px; cursor:pointer;">
+        <summary style="font-weight:600; font-size:14px; list-style:none; display:flex; justify-content:space-between; align-items:center;">I'm always hungry — what do I do? <span style="color:var(--accent); font-family:'Bebas Neue',sans-serif; font-size:18px;">+</span></summary>
+        <div style="margin-top:12px; font-size:13px; color:var(--muted); line-height:1.7;">
+          First check: are you drinking enough water? Dehydration mimics hunger. Drink 300ml water and wait 10 minutes. If still hungry: add more vegetables (zero-calorie bulk), increase protein slightly (+10g), or eat an extra boiled egg. Never skip meals trying to "save" calories — it backfires by slowing metabolism.
+        </div>
+      </details>
+
+      <details style="background:var(--card); border:1px solid var(--border); border-radius:10px; padding:16px; cursor:pointer;">
+        <summary style="font-weight:600; font-size:14px; list-style:none; display:flex; justify-content:space-between; align-items:center;">What if I'm travelling for work? <span style="color:var(--accent); font-family:'Bebas Neue',sans-serif; font-size:18px;">+</span></summary>
+        <div style="margin-top:12px; font-size:13px; color:var(--muted); line-height:1.7;">
+          Pack: almonds, protein bar (low sugar), whey sachets. At restaurants: order dal + sabzi + roti, skip the rice or bread basket. Hotel gym: do the core routine + bodyweight push/pull (push-ups, pull-up bar, dips). Even 20 min counts. Prioritise sleep over late-night work sessions — that matters more than the gym.
+        </div>
+      </details>
+
+      <details style="background:var(--card); border:1px solid var(--border); border-radius:10px; padding:16px; cursor:pointer;">
+        <summary style="font-weight:600; font-size:14px; list-style:none; display:flex; justify-content:space-between; align-items:center;">When will I actually see my abs? <span style="color:var(--accent); font-family:'Bebas Neue',sans-serif; font-size:18px;">+</span></summary>
+        <div style="margin-top:12px; font-size:13px; color:var(--muted); line-height:1.7;">
+          Abs become visible at roughly 12–14% body fat for men. At 80kg, you likely carry 18–22% body fat. Losing 6kg of fat should get you to 14–16%, which means upper abs visible and clear V-taper by September 1st. Lower abs take longest — that's where cortisol stores fat last. This is why sleep, stress management, and consistency through August are critical.
+        </div>
+      </details>
+
+    </div>
   </section>
 
 </div>
