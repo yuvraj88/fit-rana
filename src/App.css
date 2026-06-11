@@ -479,3 +479,146 @@ section { margin-bottom: 48px; }
   .navbar { padding: 0 12px; gap: 8px; }
   .navbar-brand { font-size: 18px; }
 }
+
+/* ── SCROLL PROGRESS ── */
+#scrollProgress {
+  position: fixed; top: 0; left: 0;
+  height: 4px; width: 0%;
+  background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3));
+  z-index: 999;
+  box-shadow: 0 0 14px rgba(232,255,71,0.7);
+}
+
+/* ── GRAIN OVERLAY ── */
+.grain {
+  position: fixed; inset: 0;
+  pointer-events: none;
+  z-index: 998;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ── FLOATING ORBS ── */
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.16;
+  pointer-events: none;
+  z-index: 0;
+}
+.orb-1 { width: 420px; height: 420px; background: var(--accent); top: 18%; left: -120px; animation: orbFloat1 19s ease-in-out infinite alternate; }
+.orb-2 { width: 360px; height: 360px; background: var(--accent2); top: 55%; right: -100px; animation: orbFloat2 23s ease-in-out infinite alternate; }
+.orb-3 { width: 300px; height: 300px; background: var(--accent3); top: 85%; left: 30%; animation: orbFloat1 27s ease-in-out infinite alternate; }
+@keyframes orbFloat1 { to { transform: translate(70px, -90px) scale(1.25); } }
+@keyframes orbFloat2 { to { transform: translate(-90px, 70px) scale(0.85); } }
+body.light .orb { opacity: 0.10; }
+.container, .hero, .footer { position: relative; z-index: 1; }
+
+/* ── MARQUEE ── */
+.marquee {
+  overflow: hidden;
+  background: var(--accent);
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  transform: rotate(-1deg) scale(1.02);
+  margin: -6px 0 8px;
+  position: relative;
+  z-index: 1;
+}
+.marquee-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marqueeScroll 22s linear infinite;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.12em;
+  color: #000;
+}
+.marquee-track span { padding: 0 22px; }
+@keyframes marqueeScroll { to { transform: translateX(-50%); } }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
+/* ── ANIMATED STRIPE BANNER ART ── */
+.banner-art {
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(45deg, var(--c1) 0 16px, var(--c2) 16px 32px);
+  animation: stripeMove 2.6s linear infinite;
+  opacity: 0.92;
+}
+@keyframes stripeMove { to { background-position: 45px 0; } }
+.banner-icon {
+  position: absolute;
+  right: 14px; bottom: 6px;
+  font-size: 58px;
+  opacity: 0.5;
+  z-index: 1;
+  animation: iconBob 3s ease-in-out infinite alternate;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.4));
+}
+@keyframes iconBob { to { transform: translateY(-8px) rotate(6deg); } }
+
+/* ── HERO PARTICLE CANVAS ── */
+#heroParticles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+.hero-overlay { z-index: 2; }
+.hero-content { z-index: 3; position: relative; }
+
+/* ── NEON HERO ACCENT ── */
+.hl {
+  color: var(--accent);
+  text-shadow: 0 0 18px rgba(232,255,71,0.65), 0 0 50px rgba(232,255,71,0.3);
+  animation: neonPulse 2.6s ease-in-out infinite alternate;
+}
+@keyframes neonPulse {
+  from { text-shadow: 0 0 12px rgba(232,255,71,0.45), 0 0 36px rgba(232,255,71,0.2); }
+  to   { text-shadow: 0 0 26px rgba(232,255,71,0.95), 0 0 70px rgba(232,255,71,0.45); }
+}
+.char { display: inline-block; }
+
+/* ── SHINE SWEEP on meal banners ── */
+.meal-img-grad { position: relative; overflow: hidden; }
+.meal-img-grad::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.35) 50%, transparent 60%);
+  transform: translateX(-120%);
+  animation: shineSweep 5s ease-in-out infinite;
+}
+@keyframes shineSweep { 12% { transform: translateX(120%); } 100% { transform: translateX(120%); } }
+
+/* ── CARD HOVER LIFT ── */
+.meal-card, .rule-card, .phase, .card {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s, border-color 0.3s;
+}
+.meal-card:hover, .phase:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+  border-color: rgba(232,255,71,0.35);
+}
+body.light .meal-card:hover, body.light .phase:hover { box-shadow: 0 16px 40px rgba(0,0,0,0.12); }
+.rule-card:hover { transform: translateY(-3px); border-color: rgba(232,255,71,0.3); }
+
+/* ── CALENDAR DAY HOVER ── */
+.cal-day:not(.empty) { transition: transform 0.2s ease, box-shadow 0.2s ease; cursor: default; }
+.cal-day:not(.empty):hover { transform: scale(1.07); z-index: 5; box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+
+/* ── GSAP REVEAL INITIAL STATES ── */
+.gs-reveal { opacity: 0; }
+
+/* ── PRINT OVERRIDES ── */
+@media print {
+  .orb, .grain, .marquee, #scrollProgress { display: none; }
+  .banner-art, .hl, .banner-icon, .marquee-track { animation: none !important; }
+  .gs-reveal { opacity: 1 !important; transform: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .orb, .banner-art, .meal-img-grad::after, .hl, .banner-icon, .marquee-track { animation: none !important; }
+}
