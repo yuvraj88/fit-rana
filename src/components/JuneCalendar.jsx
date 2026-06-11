@@ -30,7 +30,8 @@ export default function JuneCalendar() {
 
       <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill, minmax(180px, 1fr))',gap:'10px',marginBottom:'20px'}}>
         <div className="workout-banner">
-          <div style={{position:'absolute',inset:0,background:'linear-gradient(135deg,#ff6b35 0%,#c0392b 100%)',opacity:0.9}}></div>
+          <div className="banner-art" style={{'--c1':'#ff6b35','--c2':'#c0392b'}}></div>
+          <div className="banner-icon">🏋️</div>
           <div className="workout-banner-overlay"></div>
           <div className="workout-banner-content">
             <div className="workout-banner-title">PUSH</div>
@@ -39,7 +40,8 @@ export default function JuneCalendar() {
           <div className="workout-banner-badge" style={{background:'#ff6b35'}}>MON</div>
         </div>
         <div className="workout-banner">
-          <div style={{position:'absolute',inset:0,background:'linear-gradient(135deg,#47c9ff 0%,#0e5a8a 100%)',opacity:0.9}}></div>
+          <div className="banner-art" style={{'--c1':'#47c9ff','--c2':'#0e5a8a'}}></div>
+          <div className="banner-icon">💪</div>
           <div className="workout-banner-overlay"></div>
           <div className="workout-banner-content">
             <div className="workout-banner-title">PULL</div>
@@ -48,7 +50,8 @@ export default function JuneCalendar() {
           <div className="workout-banner-badge" style={{background:'#47c9ff',color:'#000'}}>TUE</div>
         </div>
         <div className="workout-banner">
-          <div style={{position:'absolute',inset:0,background:'linear-gradient(135deg,#a78bfa 0%,#5b21b6 100%)',opacity:0.9}}></div>
+          <div className="banner-art" style={{'--c1':'#a78bfa','--c2':'#5b21b6'}}></div>
+          <div className="banner-icon">🦵</div>
           <div className="workout-banner-overlay"></div>
           <div className="workout-banner-content">
             <div className="workout-banner-title">LEGS</div>
@@ -57,7 +60,8 @@ export default function JuneCalendar() {
           <div className="workout-banner-badge" style={{background:'#a78bfa'}}>WED</div>
         </div>
         <div className="workout-banner">
-          <div style={{position:'absolute',inset:0,background:'linear-gradient(135deg,#e8ff47 0%,#9ca300 100%)',opacity:0.9}}></div>
+          <div className="banner-art" style={{'--c1':'#e8ff47','--c2':'#9ca300'}}></div>
+          <div className="banner-icon">⚡</div>
           <div className="workout-banner-overlay"></div>
           <div className="workout-banner-content">
             <div className="workout-banner-title">HIIT</div>
@@ -66,7 +70,8 @@ export default function JuneCalendar() {
           <div className="workout-banner-badge">THU</div>
         </div>
         <div className="workout-banner">
-          <div style={{position:'absolute',inset:0,background:'linear-gradient(135deg,#4ade80 0%,#15803d 100%)',opacity:0.9}}></div>
+          <div className="banner-art" style={{'--c1':'#4ade80','--c2':'#15803d'}}></div>
+          <div className="banner-icon">🔥</div>
           <div className="workout-banner-overlay"></div>
           <div className="workout-banner-content">
             <div className="workout-banner-title">ABS CORE</div>
