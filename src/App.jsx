@@ -19,6 +19,7 @@ import SleepRecovery from './components/SleepRecovery'
 import Mindset from './components/Mindset'
 import FAQ from './components/FAQ'
 import Relaxation from './components/Relaxation'
+import Marathon5K from './components/Marathon5K'
 import Footer from './components/Footer'
 
 function App() {
@@ -293,6 +294,7 @@ function App() {
         <section id="mindset"><Mindset /></section>
         <section id="faq"><FAQ /></section>
         <section id="relaxation"><Relaxation /></section>
+        <section id="marathon"><Marathon5K /></section>
       </div>
       <Footer />
     </>
