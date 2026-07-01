@@ -16,6 +16,7 @@ export default function Navbar({ isDark, toggleTheme }) {
     { href: '#mindset', label: 'Mindset' },
     { href: '#faq', label: 'FAQ' },
     { href: '#relaxation', label: 'Relax' },
+    { href: '#marathon', label: '🏁 5KM Race' },
   ]
 
   return (
